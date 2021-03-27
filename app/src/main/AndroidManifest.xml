@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyTrack">
+        <activity android:name=".barcodescanning.SearchProductName"></activity>
         <activity
             android:name=".barcodescanning.SalesAssociateHome"
             android:label="@string/title_activity_sales_associate_home"
-            android:theme="@style/Theme.EasyTrack.NoActionBar"></activity>
+            android:theme="@style/Theme.EasyTrack.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
