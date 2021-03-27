@@ -19,7 +19,7 @@ class DepartmentManagerHomeActivity : AppCompatActivity() {
         binding.btnViewAllProducts.setOnClickListener { viewAllProducts() }
     }
 
-    fun searchProductScan(){ }
-    fun searchProductName(){ }
-    fun viewAllProducts() { }
+    private fun searchProductScan(){ }
+    private fun searchProductName(){ }
+    private fun viewAllProducts() { }
 }
