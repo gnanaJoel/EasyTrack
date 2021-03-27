@@ -7,12 +7,7 @@
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-<<<<<<< HEAD
-        <option name="gradleJvm" value="1.8.0_231" />
-=======
-        <option name="gradleHome" value="/usr/local/Cellar/gradle/6.2/libexec" />
-        <option name="gradleJvm" value="1.8" />
->>>>>>> a0a1ad29e21cb985de1428f9ca2fc54a8376d20c
+        <option name="gradleHome" value="D:/Tools/gradle-6.3" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
