@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.tri_devs.easytrack.R
 import com.tri_devs.easytrack.databinding.ActivityWarehouseManagerHomeBinding
+import com.tri_devs.easytrack.store_inventory.StoreInventoryActivity
 
 class WarehouseManagerHomeActivity : AppCompatActivity() {
 
@@ -19,6 +20,10 @@ class WarehouseManagerHomeActivity : AppCompatActivity() {
 
         binding.btnInsertNewProductInfo.setOnClickListener {
             val intent = Intent(this, WarehouseManagerInsertNewProductInfoActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnViewAllProducts.setOnClickListener {
+            val intent = Intent(this, StoreInventoryActivity::class.java)
             startActivity(intent)
         }
     }

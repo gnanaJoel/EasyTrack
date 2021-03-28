@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EasyTrack</string>
+    <string name="retailPrice"><bold><strike>$79.99</strike></bold></string>
 </resources>
