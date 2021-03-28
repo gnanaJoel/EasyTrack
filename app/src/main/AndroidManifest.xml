@@ -9,6 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyTrack">
+        <activity android:name=".barcodescanning.BarcodeScanning"></activity>
+        <activity android:name=".barcodescanning.ProductInfoSearch" />
+        <activity android:name=".barcodescanning.SearchProductName" />
+        <activity
+            android:name=".barcodescanning.SalesAssociateHome"
+            android:label="@string/title_activity_sales_associate_home"
+            android:theme="@style/Theme.EasyTrack.NoActionBar" />
+        <activity android:name=".productInfoUpdate.ProductInformationDetailsActivity"></activity>
+        <activity android:name=".productInfoUpdate.DepartmentManagerHomeActivity" />
+        <activity android:name=".store_inventory.StoreInventoryActivity"></activity>
+        <activity android:name=".barcodegeneration.WarehouseManagerInsertNewProductInfoActivity" />
+        <activity android:name=".barcodegeneration.WarehouseManagerConfirmInsert"></activity>
+        <activity android:name=".barcodegeneration.WarehouseManagerHomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
