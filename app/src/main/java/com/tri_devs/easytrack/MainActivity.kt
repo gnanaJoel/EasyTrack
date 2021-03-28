@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import com.tri_devs.easytrack.barcodegeneration.WarehouseManagerHomeActivity
 import com.tri_devs.easytrack.barcodescanning.SalesAssociateHome
 import com.tri_devs.easytrack.databinding.ActivityMainBinding
 import com.tri_devs.easytrack.productInfoUpdate.DepartmentManagerHomeActivity
@@ -35,9 +36,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         else{
-//            if(username == "Ware100" && password == "ware100"){
-//
-//            }
+            if(username == "Ware100" && password == "ware100"){
+                val intent = Intent(this, WarehouseManagerHomeActivity::class.java)
+                startActivity(intent)
+            }
              if(username == "Sales100" && password == "sales100"){
                 val intent = Intent(this, SalesAssociateHome::class.java)
                 startActivity(intent)
