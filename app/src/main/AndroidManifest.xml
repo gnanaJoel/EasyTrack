@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyTrack">
-        <activity android:name=".ProductInformationDetailsActivty"></activity>
+        <activity android:name=".ProductInformationDetailsActivity"></activity>
         <activity android:name=".DepartmentManagerHomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

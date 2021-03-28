@@ -1,11 +1,12 @@
 package com.tri_devs.easytrack
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.tri_devs.easytrack.databinding.ActivityProductInformationDetailsActivtyBinding
 
-class ProductInformationDetailsActivty : AppCompatActivity() {
+class ProductInformationDetailsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProductInformationDetailsActivtyBinding
 
@@ -15,6 +16,7 @@ class ProductInformationDetailsActivty : AppCompatActivity() {
 
         binding.btnSearchByName.setOnClickListener { searchProductByName() }
         binding.btnSubmit.setOnClickListener {  submitUpdate() }
+        binding.btnBack.setOnClickListener { backToMenu() }
     }
 
     private fun searchProductByName() {
@@ -23,5 +25,10 @@ class ProductInformationDetailsActivty : AppCompatActivity() {
 
     private fun submitUpdate() {
         TODO("Not yet implemented")
+    }
+
+    private fun backToMenu(){
+        val intent = Intent(this, DepartmentManagerHomeActivity::class.java)
+        startActivity(intent)
     }
 }

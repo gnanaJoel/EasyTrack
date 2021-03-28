@@ -22,7 +22,7 @@ class DepartmentManagerHomeActivity : AppCompatActivity() {
 
     private fun searchProductScan(){ }
     private fun searchProductName(){
-        val intent= Intent(this, ProductInformationDetailsActivty::class.java)
+        val intent= Intent(this, ProductInformationDetailsActivity::class.java)
         startActivity(intent)
     }
     private fun viewAllProducts() { }

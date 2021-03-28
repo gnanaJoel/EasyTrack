@@ -27,4 +27,7 @@
     <string name="enter_username">Enter username</string>
     <string name="loginTitle">Login:</string>
     <string name="easytrack">EasyTrack</string>
+    <string name="back_to_menu">Back to Menu</string>
+    <string name="submit">Submit</string>
+    <string name="search_by_name">Search By Name</string>
 </resources>
