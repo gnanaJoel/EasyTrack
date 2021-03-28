@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
-
+        binding.edtUser.text.clear()
+        binding.edtPass.text.clear()
     }
 }

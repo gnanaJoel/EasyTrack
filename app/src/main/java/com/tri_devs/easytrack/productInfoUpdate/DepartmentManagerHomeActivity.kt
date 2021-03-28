@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.tri_devs.easytrack.R
+import com.tri_devs.easytrack.barcodescanning.BarcodeScanning
 import com.tri_devs.easytrack.databinding.ActivityDepartmentManagerHomeBinding
 
 class DepartmentManagerHomeActivity : AppCompatActivity() {
@@ -22,8 +23,8 @@ class DepartmentManagerHomeActivity : AppCompatActivity() {
     }
 
     private fun searchProductScan(){
-        val intent = Intent(this, ProductInformationDetailsActivity::class.java)
-        intent.putExtra("inputType","scan")
+        val intent = Intent(this, BarcodeScanning::class.java)
+        intent.putExtra("inputType","deptScan")
         startActivity(intent)
     }
     private fun searchProductName(){

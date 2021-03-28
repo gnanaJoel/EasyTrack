@@ -28,6 +28,7 @@ class SalesAssociateHome : AppCompatActivity() {
 
     fun scan(){
         val intent = Intent(this, BarcodeScanning::class.java)
+        intent.putExtra("inputType","salesScan")
         startActivity(intent)
 
     }

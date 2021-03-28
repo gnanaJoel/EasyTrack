@@ -21,7 +21,7 @@ class ProductInformationDetailsActivity : AppCompatActivity() {
             R.layout.activity_product_information_details_activty
         )
 
-        var bundle:String = intent.getStringExtra("inputType").toString()
+        val bundle:String = intent.getStringExtra("inputType").toString()
 
         if(bundle == "name"){
             binding.etProductName.text.clear()
