@@ -18,6 +18,9 @@
             android:theme="@style/Theme.EasyTrack.NoActionBar" />
         <activity android:name=".productInfoUpdate.ProductInformationDetailsActivity"></activity>
         <activity android:name=".productInfoUpdate.DepartmentManagerHomeActivity" />
+        <activity android:name=".store_inventory.StoreInventoryActivity"></activity>
+        <activity android:name=".barcodegeneration.WarehouseManagerInsertNewProductInfoActivity" />
+        <activity android:name=".barcodegeneration.WarehouseManagerHomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
