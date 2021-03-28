@@ -30,4 +30,6 @@
     <string name="back_to_menu">Back to Menu</string>
     <string name="submit">Submit</string>
     <string name="search_by_name">Search By Name</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>
