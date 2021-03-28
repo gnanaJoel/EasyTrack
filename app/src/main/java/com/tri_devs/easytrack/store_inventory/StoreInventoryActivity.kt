@@ -23,7 +23,7 @@ class StoreInventoryActivity : AppCompatActivity() {
         binding.rvStoreInventory.layoutManager = LinearLayoutManager(this)
 
         storeProductList = mutableListOf<Product>()
-        storeProductList.add(Product("Lego Star Wars", "Star Wars Lego Set", 15, 9125055325260, getString(R.string.retailPrice), "$89.99", "21Dec16-21Dec31"))
+        storeProductList.add(Product("Lego Star Wars", "Star Wars Lego Set", 15, 9125055325260, getString(R.string.retailPrice), "$79.99", "21Dec16-21Dec31"))
         storeProductList.add(Product("Lego Harry Potter", "Harry Potter Lego Set", 10, 631406983752, "$69.99", "N/A", "N/A"))
 
 
