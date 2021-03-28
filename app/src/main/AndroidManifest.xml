@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyTrack">
-        <activity android:name=".barcodescanning.SearchProductName"></activity>
+        <activity android:name=".barcodescanning.BarcodeScanning"></activity>
+        <activity android:name=".barcodescanning.ProductInfoSearch" />
+        <activity android:name=".barcodescanning.SearchProductName" />
         <activity
             android:name=".barcodescanning.SalesAssociateHome"
             android:label="@string/title_activity_sales_associate_home"
