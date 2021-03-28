@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import com.tri_devs.easytrack.R
 import com.tri_devs.easytrack.databinding.ActivityMainBinding
 import com.tri_devs.easytrack.databinding.ActivitySalesAssociateHomeBinding
+import com.tri_devs.easytrack.store_inventory.StoreInventoryActivity
 
 class SalesAssociateHome : AppCompatActivity() {
     lateinit var binding: ActivitySalesAssociateHomeBinding
@@ -40,9 +41,8 @@ class SalesAssociateHome : AppCompatActivity() {
     }
 
     fun view(){
-        val intent = Intent(this, SalesAssociateHome::class.java)
+        val intent = Intent(this, StoreInventoryActivity::class.java)
         startActivity(intent)
-
     }
 
 

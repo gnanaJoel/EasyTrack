@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import com.tri_devs.easytrack.R
 import com.tri_devs.easytrack.barcodescanning.BarcodeScanning
 import com.tri_devs.easytrack.databinding.ActivityDepartmentManagerHomeBinding
+import com.tri_devs.easytrack.store_inventory.StoreInventoryActivity
 
 class DepartmentManagerHomeActivity : AppCompatActivity() {
 
@@ -32,5 +33,8 @@ class DepartmentManagerHomeActivity : AppCompatActivity() {
         intent.putExtra("inputType","name")
         startActivity(intent)
     }
-    private fun viewAllProducts() { }
+    private fun viewAllProducts() {
+        val intent = Intent(this, StoreInventoryActivity::class.java)
+        startActivity(intent)
+    }
 }
