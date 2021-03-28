@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.tri_devs.easytrack.R
+import com.tri_devs.easytrack.barcodegeneration.WarehouseManagerHomeActivity
 import com.tri_devs.easytrack.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
