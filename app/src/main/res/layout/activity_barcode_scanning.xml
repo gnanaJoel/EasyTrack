@@ -1,30 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".barcodescanning.BarcodeScanning">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
 
-    <TextView
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:text="Scan Barcode"
-        android:textColor="#E61515"
-        android:textSize="40dp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".barcodescanning.BarcodeScanning">
 
 
-   <!-- <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/BarcodeScan" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="Scan Barcode"
+            android:textColor="#E61515"
+            android:textSize="40dp"
+            android:textStyle="bold" />
 
-        /> -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/barcodescan" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnScanThis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="55dp"
+            android:text="Scan"
+            android:textSize="30dp" />
+
+
+    </LinearLayout>
+</layout>
