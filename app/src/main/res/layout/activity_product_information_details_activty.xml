@@ -178,7 +178,7 @@
                         android:layout_weight="2"
                         android:clickable="false"
                         android:hint="@string/_912505325260"
-                        android:inputType="none"
+                        android:inputType="number"
                         android:text="@string/_912505325260"
                         android:textSize="20sp" />
 
