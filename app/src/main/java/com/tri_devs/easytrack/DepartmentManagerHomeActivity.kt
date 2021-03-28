@@ -20,9 +20,14 @@ class DepartmentManagerHomeActivity : AppCompatActivity() {
         binding.btnViewAllProducts.setOnClickListener { viewAllProducts() }
     }
 
-    private fun searchProductScan(){ }
+    private fun searchProductScan(){
+        val intent = Intent(this, ProductInformationDetailsActivity::class.java)
+        intent.putExtra("inputType","scan")
+        startActivity(intent)
+    }
     private fun searchProductName(){
-        val intent= Intent(this, ProductInformationDetailsActivity::class.java)
+        val intent = Intent(this, ProductInformationDetailsActivity::class.java)
+        intent.putExtra("inputType","name")
         startActivity(intent)
     }
     private fun viewAllProducts() { }
