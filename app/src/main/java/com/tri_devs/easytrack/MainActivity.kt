@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.tri_devs.easytrack.barcodescanning.SalesAssociateHome
 import com.tri_devs.easytrack.databinding.ActivityMainBinding
+import com.tri_devs.easytrack.productInfoUpdate.DepartmentManagerHomeActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,9 +42,10 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, SalesAssociateHome::class.java)
                 startActivity(intent)
             }
-//            else if(username == "Dept100" && password == "dept100"){
-//
-//            }
+            else if(username == "Dept100" && password == "dept100"){
+                 val intent = Intent(this, DepartmentManagerHomeActivity::class.java)
+                 startActivity(intent)
+            }
 
             else{
                 Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show()
