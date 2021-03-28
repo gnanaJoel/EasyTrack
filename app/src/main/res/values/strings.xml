@@ -21,4 +21,10 @@
     <string name="black_friday">Black Friday</string>
     <string name="boxing_day">Boxing Day</string>
     <string name="sale">Sale</string>
+    <string name="login">Login</string>
+    <string name="enter_password">Enter password</string>
+    <string name="password">Password:</string>
+    <string name="enter_username">Enter username</string>
+    <string name="loginTitle">Login:</string>
+    <string name="easytrack">EasyTrack</string>
 </resources>
