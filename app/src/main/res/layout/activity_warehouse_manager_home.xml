@@ -31,7 +31,7 @@
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="Welcome User!"
+            android:text="Welcome User100!"
             android:textColor="#E61515"
             android:textSize="30dp"
             android:textStyle="bold" />
