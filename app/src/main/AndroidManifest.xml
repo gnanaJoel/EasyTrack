@@ -16,6 +16,8 @@
             android:name=".barcodescanning.SalesAssociateHome"
             android:label="@string/title_activity_sales_associate_home"
             android:theme="@style/Theme.EasyTrack.NoActionBar" />
+        <activity android:name=".productInfoUpdate.ProductInformationDetailsActivity"></activity>
+        <activity android:name=".productInfoUpdate.DepartmentManagerHomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
