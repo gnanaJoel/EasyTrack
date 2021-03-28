@@ -52,7 +52,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:hint="@string/lego_star_wars"
                         android:inputType="text"
                         android:text="@string/lego_star_wars"
                         android:textSize="20sp" />

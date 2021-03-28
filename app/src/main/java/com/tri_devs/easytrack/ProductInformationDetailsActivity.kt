@@ -21,6 +21,7 @@ class ProductInformationDetailsActivity : AppCompatActivity() {
             binding.etProductName.text.clear()
             binding.etProductName.inputType = InputType.TYPE_CLASS_TEXT
         }else{
+            binding.etProductName.isClickable = false
             binding.etProductName.inputType = InputType.TYPE_NULL
         }
 
