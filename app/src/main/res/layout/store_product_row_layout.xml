@@ -35,8 +35,10 @@
                 android:layout_marginHorizontal="8dp"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:text="@{bndProduct.retailPrice}"
-                android:textSize="30dp" />
+                android:textColor="#E61515"
+                android:text="@{bndProduct.salesPrice}"
+                android:textSize="30dp"
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <LinearLayout
@@ -61,10 +63,8 @@
                 android:layout_marginHorizontal="8dp"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:text="@{bndProduct.salesPrice}"
-                android:textColor="#E61515"
-                android:textSize="30dp"
-                android:textStyle="bold" />
+                android:text="@{bndProduct.retailPrice}"
+                android:textSize="30dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -88,7 +88,6 @@
                 android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:text="@{String.valueOf(bndProduct.quantity)}"
-                android:textColor="#E61515"
                 android:textSize="30dp"
                 android:textStyle="bold" />
         </LinearLayout>
