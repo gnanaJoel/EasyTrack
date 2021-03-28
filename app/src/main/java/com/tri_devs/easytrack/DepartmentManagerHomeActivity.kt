@@ -1,6 +1,7 @@
 package com.tri_devs.easytrack
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -20,6 +21,9 @@ class DepartmentManagerHomeActivity : AppCompatActivity() {
     }
 
     private fun searchProductScan(){ }
-    private fun searchProductName(){ }
+    private fun searchProductName(){
+        val intent= Intent(this, ProductInformationDetailsActivty::class.java)
+        startActivity(intent)
+    }
     private fun viewAllProducts() { }
 }
