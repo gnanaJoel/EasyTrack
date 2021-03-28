@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, WarehouseManagerHomeActivity::class.java)
                 startActivity(intent)
             }
-             if(username == "Sales100" && password == "sales100"){
+            else if(username == "Sales100" && password == "sales100"){
                 val intent = Intent(this, SalesAssociateHome::class.java)
                 startActivity(intent)
             }
