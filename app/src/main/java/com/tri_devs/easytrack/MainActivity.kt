@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.tri_devs.easytrack.databinding.ActivityMainBinding
+import com.tri_devs.easytrack.productInfoUpdate.DepartmentManagerHomeActivity
 
 class MainActivity : AppCompatActivity() {
 

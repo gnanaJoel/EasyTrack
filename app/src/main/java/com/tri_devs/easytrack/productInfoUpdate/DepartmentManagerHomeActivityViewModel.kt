@@ -1,4 +1,4 @@
-package com.tri_devs.easytrack
+package com.tri_devs.easytrack.productInfoUpdate
 
 class DepartmentManagerHomeActivityViewModel {
 }

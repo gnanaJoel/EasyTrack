@@ -1,10 +1,11 @@
-package com.tri_devs.easytrack
+package com.tri_devs.easytrack.productInfoUpdate
 
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.tri_devs.easytrack.R
 import com.tri_devs.easytrack.databinding.ActivityDepartmentManagerHomeBinding
 
 class DepartmentManagerHomeActivity : AppCompatActivity() {
