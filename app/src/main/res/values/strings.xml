@@ -41,4 +41,5 @@
     <string name="search_by_name">Search By Name</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="retailPrice"><bold><strike>$79.99</strike></bold></string>
 </resources>
