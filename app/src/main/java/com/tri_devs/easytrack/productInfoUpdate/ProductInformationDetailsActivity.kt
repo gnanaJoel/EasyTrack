@@ -57,8 +57,8 @@ class ProductInformationDetailsActivity : AppCompatActivity() {
             // if the dialog is cancelable
             .setCancelable(false)
             // positive button text and action
-            .setPositiveButton("Confirm") { _, _ ->
-                finish()
+            .setPositiveButton("Confirm") { dialog, _ ->
+                dialog.dismiss()
             }
             // negative button text and action
             .setNegativeButton("Cancel") { dialog, _ ->
