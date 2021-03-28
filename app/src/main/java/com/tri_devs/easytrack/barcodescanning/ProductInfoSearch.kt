@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.tri_devs.easytrack.R
 
 class ProductInfoSearch : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_info_search)
