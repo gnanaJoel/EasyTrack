@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-<<<<<<< HEAD
-        <option name="gradleJvm" value="1.8.0_231" />
-=======
         <option name="gradleHome" value="/usr/local/Cellar/gradle/6.2/libexec" />
-        <option name="gradleJvm" value="1.8" />
->>>>>>> a0a1ad29e21cb985de1428f9ca2fc54a8376d20c
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
