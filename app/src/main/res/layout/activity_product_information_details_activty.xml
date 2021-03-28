@@ -267,28 +267,28 @@
 
                 </LinearLayout>
 
+                <Button
+                    android:id="@+id/btnSearchByName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Search By Name"
+                    android:textSize="30sp" />
+
+                <Button
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Submit"
+                    android:textSize="30sp" />
 
             </LinearLayout>
 
         </ScrollView>
 
-        <Button
-            android:id="@+id/btnSearchByName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="10dp"
-            android:text="Search By Name"
-            android:textSize="30sp" />
-
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="10dp"
-            android:text="Submit"
-            android:textSize="30sp" />
-
     </LinearLayout>
+
 </layout>
