@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.tri_devs.easytrack.MainActivity
 import com.tri_devs.easytrack.R
 import com.tri_devs.easytrack.databinding.ActivityWarehouseManagerHomeBinding
 import com.tri_devs.easytrack.store_inventory.StoreInventoryActivity
@@ -24,6 +25,11 @@ class WarehouseManagerHomeActivity : AppCompatActivity() {
         }
         binding.btnViewAllProducts.setOnClickListener {
             val intent = Intent(this, StoreInventoryActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnLogout.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }

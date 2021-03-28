@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.tri_devs.easytrack.MainActivity
 import com.tri_devs.easytrack.R
 import com.tri_devs.easytrack.barcodescanning.BarcodeScanning
 import com.tri_devs.easytrack.databinding.ActivityDepartmentManagerHomeBinding
@@ -21,6 +22,10 @@ class DepartmentManagerHomeActivity : AppCompatActivity() {
         binding.btnSearchProductScan.setOnClickListener { searchProductScan() }
         binding.btnSearchProductName.setOnClickListener { searchProductName()  }
         binding.btnViewAllProducts.setOnClickListener { viewAllProducts() }
+        binding.btnLogout.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun searchProductScan(){

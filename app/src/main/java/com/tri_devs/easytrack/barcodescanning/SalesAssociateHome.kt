@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.tri_devs.easytrack.MainActivity
 import com.tri_devs.easytrack.R
 import com.tri_devs.easytrack.databinding.ActivityMainBinding
 import com.tri_devs.easytrack.databinding.ActivitySalesAssociateHomeBinding
@@ -25,6 +26,11 @@ class SalesAssociateHome : AppCompatActivity() {
         binding.btnSearch.setOnClickListener { search() }
 
         binding.btnView.setOnClickListener { view() }
+
+        binding.btnLogout.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun scan(){

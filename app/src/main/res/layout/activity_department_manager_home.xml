@@ -51,5 +51,14 @@
             android:text="View All Products"
             android:textSize="30dp" />
 
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="55dp"
+            android:text="Logout"
+            android:textSize="30dp" />
+
     </LinearLayout>
 </layout>
