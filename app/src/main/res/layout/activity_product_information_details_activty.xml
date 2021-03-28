@@ -171,15 +171,12 @@
                         android:text="@string/upc_number"
                         android:textSize="20sp" />
 
-                    <EditText
-                        android:id="@+id/etUPCNumber"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:clickable="false"
-                        android:hint="@string/_912505325260"
-                        android:inputType="number"
                         android:text="@string/_912505325260"
+                        android:textColor="@color/black"
                         android:textSize="20sp" />
 
                 </LinearLayout>
