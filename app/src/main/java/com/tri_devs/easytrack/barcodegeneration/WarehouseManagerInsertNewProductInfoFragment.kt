@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.tri_devs.easytrack.R
-import com.tri_devs.easytrack.barcodegeneration.WarehouseManagerConfirmInsert
 import com.tri_devs.easytrack.databinding.FragmentWarehouseManagerInsertNewProductInfoBinding
 
 class WarehouseManagerInsertNewProductInfoFragment : Fragment() {

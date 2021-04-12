@@ -36,7 +36,9 @@ class SalesAssociateHomeFragment : Fragment() {
 
     fun scan(){
         val scan = "salesScan"
-
+        val action = SalesAssociateHomeFragmentDirections.
+        actionSalesAssociateHomeFragmentToBarcodeScanningFragment(scan)
+        findNavController().navigate(action)
     }
 
     fun search(){
