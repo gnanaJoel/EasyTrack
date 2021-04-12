@@ -1,4 +1,4 @@
-package com.tri_devs.easytrack
+package com.tri_devs.easytrack.barcodegeneration
 
 import android.content.Intent
 import android.os.Bundle

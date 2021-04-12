@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/warehouseManagerInsertNewProductInfoFragment"
-        android:name="com.tri_devs.easytrack.WarehouseManagerInsertNewProductInfoFragment"
+        android:name="com.tri_devs.easytrack.barcodegeneration.WarehouseManagerInsertNewProductInfoFragment"
         android:label="fragment_warehouse_manager_insert_new_product_info"
         tools:layout="@layout/fragment_warehouse_manager_insert_new_product_info" />
 </navigation>
