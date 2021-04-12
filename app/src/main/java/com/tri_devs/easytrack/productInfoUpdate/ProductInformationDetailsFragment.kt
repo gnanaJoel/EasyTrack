@@ -1,4 +1,4 @@
-package com.tri_devs.easytrack
+package com.tri_devs.easytrack.productInfoUpdate
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,8 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.navArgs
+import com.tri_devs.easytrack.ProductInformationDetailsFragmentArgs
 import com.tri_devs.easytrack.databinding.FragmentProductInformationDetailsBinding
-import com.tri_devs.easytrack.productInfoUpdate.DepartmentManagerHomeActivity
 
 class ProductInformationDetailsFragment : Fragment() {
     lateinit var binding: FragmentProductInformationDetailsBinding

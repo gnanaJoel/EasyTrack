@@ -126,7 +126,7 @@
     </fragment>
     <fragment
         android:id="@+id/productInformationDetailsFragment"
-        android:name="com.tri_devs.easytrack.ProductInformationDetailsFragment"
+        android:name="com.tri_devs.easytrack.productInfoUpdate.ProductInformationDetailsFragment"
         android:label="fragment_product_information_details"
         tools:layout="@layout/fragment_product_information_details" >
         <argument
