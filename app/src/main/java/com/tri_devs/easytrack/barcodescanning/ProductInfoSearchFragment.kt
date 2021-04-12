@@ -1,10 +1,11 @@
-package com.tri_devs.easytrack
+package com.tri_devs.easytrack.barcodescanning
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.tri_devs.easytrack.R
 
 class ProductInfoSearchFragment : Fragment() {
 

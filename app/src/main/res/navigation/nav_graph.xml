@@ -86,7 +86,7 @@
     </fragment>
     <fragment
         android:id="@+id/productInfoSearchFragment"
-        android:name="com.tri_devs.easytrack.ProductInfoSearchFragment"
+        android:name="com.tri_devs.easytrack.barcodescanning.ProductInfoSearchFragment"
         android:label="fragment_product_info_search"
         tools:layout="@layout/fragment_product_info_search" />
 </navigation>
