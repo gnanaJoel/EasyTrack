@@ -100,4 +100,9 @@
         android:name="com.tri_devs.easytrack.barcodescanning.SearchProductNameFragment"
         android:label="fragment_seach_product_name"
         tools:layout="@layout/fragment_search_product_name" />
+    <fragment
+        android:id="@+id/departmentManagerHomeFragment"
+        android:name="com.tri_devs.easytrack.DepartmentManagerHomeFragment"
+        android:label="fragment_department_manager_home"
+        tools:layout="@layout/fragment_department_manager_home" />
 </navigation>
