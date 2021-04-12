@@ -38,4 +38,9 @@
         android:id="@+id/storeInventoryActivity"
         android:name="com.tri_devs.easytrack.store_inventory.StoreInventoryActivity"
         android:label="StoreInventoryActivity" />
+    <fragment
+        android:id="@+id/warehouseManagerConfirmInsertFragment"
+        android:name="com.tri_devs.easytrack.WarehouseManagerConfirmInsertFragment"
+        android:label="fragment_warehouse_manager_confirm_insert"
+        tools:layout="@layout/fragment_warehouse_manager_confirm_insert" />
 </navigation>
