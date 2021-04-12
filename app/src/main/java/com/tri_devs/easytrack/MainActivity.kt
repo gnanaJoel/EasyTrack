@@ -1,18 +1,12 @@
 package com.tri_devs.easytrack
 
-import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.tri_devs.easytrack.barcodegeneration.WarehouseManagerHomeActivity
-import com.tri_devs.easytrack.barcodescanning.SalesAssociateHome
-import com.tri_devs.easytrack.databinding.ActivityMainBinding
-import com.tri_devs.easytrack.productInfoUpdate.DepartmentManagerHomeActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration

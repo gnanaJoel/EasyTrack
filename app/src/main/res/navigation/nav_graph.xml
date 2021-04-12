@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_loginFragment_to_warehouseManagerHomeFragment"
             app:destination="@id/warehouseManagerHomeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_salesAssociateHomeFragment"
+            app:destination="@id/salesAssociateHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/warehouseManagerHomeFragment"
@@ -54,4 +57,9 @@
             android:id="@+id/action_yes"
             app:destination="@id/warehouseManagerHomeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/salesAssociateHomeFragment"
+        android:name="com.tri_devs.easytrack.SalesAssociateHomeFragment"
+        android:label="fragment_sales_associate_home"
+        tools:layout="@layout/fragment_sales_associate_home" />
 </navigation>
