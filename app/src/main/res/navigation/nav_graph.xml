@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/warehouseManagerHomeFragment"
-        android:name="com.tri_devs.easytrack.WarehouseManagerHomeFragment"
+        android:name="com.tri_devs.easytrack.barcodegeneration.WarehouseManagerHomeFragment"
         android:label="fragment_warehouse_manager_home"
         tools:layout="@layout/fragment_warehouse_manager_home" >
         <action
