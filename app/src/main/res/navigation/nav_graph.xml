@@ -117,5 +117,13 @@
         <action
             android:id="@+id/action_departmentManagerHomeFragment_to_barcodeScanningFragment"
             app:destination="@id/barcodeScanningFragment" />
+        <action
+            android:id="@+id/action_departmentManagerHomeFragment_to_productInformationDetailsFragment"
+            app:destination="@id/productInformationDetailsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/productInformationDetailsFragment"
+        android:name="com.tri_devs.easytrack.ProductInformationDetailsFragment"
+        android:label="fragment_product_information_details"
+        tools:layout="@layout/fragment_product_information_details" />
 </navigation>
