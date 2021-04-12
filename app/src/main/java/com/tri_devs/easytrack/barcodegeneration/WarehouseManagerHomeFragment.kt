@@ -21,7 +21,7 @@ class WarehouseManagerHomeFragment : Fragment() {
         binding = FragmentWarehouseManagerHomeBinding.inflate(this.layoutInflater, container, false)
 
         binding.btnInsertNewProductInfo.setOnClickListener {
-
+            findNavController().navigate(R.id.action_warehouseManagerHomeFragment_to_warehouseManagerInsertNewProductInfoFragment)
         }
         binding.btnViewAllProducts.setOnClickListener {
 

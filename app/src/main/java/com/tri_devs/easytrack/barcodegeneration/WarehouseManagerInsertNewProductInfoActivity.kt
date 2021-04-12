@@ -24,5 +24,4 @@ class WarehouseManagerInsertNewProductInfoActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-
 }
