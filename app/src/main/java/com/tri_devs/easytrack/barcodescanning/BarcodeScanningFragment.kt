@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.tri_devs.easytrack.BarcodeScanningFragmentArgs
 import com.tri_devs.easytrack.R
 import com.tri_devs.easytrack.databinding.FragmentBarcodeScanningBinding
 

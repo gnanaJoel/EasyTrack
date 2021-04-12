@@ -111,5 +111,11 @@
         <action
             android:id="@+id/action_logout_department"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_departmentManagerHomeFragment_to_storeInventoryActivity"
+            app:destination="@id/storeInventoryActivity" />
+        <action
+            android:id="@+id/action_departmentManagerHomeFragment_to_barcodeScanningFragment"
+            app:destination="@id/barcodeScanningFragment" />
     </fragment>
 </navigation>

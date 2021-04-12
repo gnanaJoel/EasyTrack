@@ -30,9 +30,10 @@ class DepartmentManagerHomeFragment : Fragment() {
     }
 
     private fun searchProductScan(){
-//        val intent = Intent(this, BarcodeScanning::class.java)
-//        intent.putExtra("inputType","deptScan")
-//        startActivity(intent)
+        val scan = "deptScan"
+        val action = DepartmentManagerHomeFragmentDirections.
+        actionDepartmentManagerHomeFragmentToBarcodeScanningFragment(scan)
+        findNavController().navigate(action)
     }
     private fun searchProductName(){
 //        val intent = Intent(this, ProductInformationDetailsActivity::class.java)
@@ -40,8 +41,7 @@ class DepartmentManagerHomeFragment : Fragment() {
 //        startActivity(intent)
     }
     private fun viewAllProducts() {
-//        val intent = Intent(this, StoreInventoryActivity::class.java)
-//        startActivity(intent)
+        findNavController().navigate(R.id.action_departmentManagerHomeFragment_to_storeInventoryActivity)
     }
 
 }
