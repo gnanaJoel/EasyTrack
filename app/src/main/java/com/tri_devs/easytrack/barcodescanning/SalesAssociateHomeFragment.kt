@@ -35,7 +35,8 @@ class SalesAssociateHomeFragment : Fragment() {
     }
 
     fun scan(){
-        //
+        val scan = "salesScan"
+
     }
 
     fun search(){
