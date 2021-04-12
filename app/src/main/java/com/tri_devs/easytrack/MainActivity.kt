@@ -5,57 +5,29 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.tri_devs.easytrack.barcodegeneration.WarehouseManagerHomeActivity
 import com.tri_devs.easytrack.barcodescanning.SalesAssociateHome
 import com.tri_devs.easytrack.databinding.ActivityMainBinding
 import com.tri_devs.easytrack.productInfoUpdate.DepartmentManagerHomeActivity
 
 class MainActivity : AppCompatActivity() {
-
-    var username: String = ""
-    var password: String = ""
-    lateinit var binding: ActivityMainBinding
+    private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // setup binding
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-        binding.btnLogin.setOnClickListener {
-            login()
-        }
+        setContentView(R.layout.activity_main)
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragment_nav_host) as NavHostFragment
+        this.navController = navHostFragment.navController
+        appBarConfiguration = AppBarConfiguration(navController.graph)
+        setupActionBarWithNavController(navController, appBarConfiguration)
     }
-
-
-    fun login(){
-        username = binding.edtUser.text.toString()
-        password = binding.edtPass.text.toString()
-        if(username.isEmpty()||password.isEmpty() ){
-            Toast.makeText(this, "Please fill in both text input fields", Toast.LENGTH_SHORT).show()
-        }
-
-        else{
-            if(username == "Ware100" && password == "ware100"){
-                val intent = Intent(this, WarehouseManagerHomeActivity::class.java)
-                startActivity(intent)
-            }
-            else if(username == "Sales100" && password == "sales100"){
-                val intent = Intent(this, SalesAssociateHome::class.java)
-                startActivity(intent)
-            }
-            else if(username == "Dept100" && password == "dept100"){
-                 val intent = Intent(this, DepartmentManagerHomeActivity::class.java)
-                 startActivity(intent)
-            }
-
-            else{
-                Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show()
-
-            }
-
-        }
-        binding.edtUser.text.clear()
-        binding.edtPass.text.clear()
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }
