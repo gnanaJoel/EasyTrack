@@ -69,8 +69,8 @@
             android:id="@+id/action_salesAssociateHomeFragment_to_barcodeScanningFragment"
             app:destination="@id/barcodeScanningFragment" />
         <action
-            android:id="@+id/action_salesAssociateHomeFragment_to_productInfoFragment"
-            app:destination="@id/productInfoFragment" />
+            android:id="@+id/action_salesAssociateHomeFragment_to_productInfoSearchFragment"
+            app:destination="@id/productInfoSearchFragment" />
     </fragment>
     <fragment
         android:id="@+id/barcodeScanningFragment"
@@ -82,8 +82,8 @@
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/productInfoFragment"
-        android:name="com.tri_devs.easytrack.ProductInfoFragment"
-        android:label="fragment_product_info"
-        tools:layout="@layout/fragment_product_info" />
+        android:id="@+id/productInfoSearchFragment"
+        android:name="com.tri_devs.easytrack.ProductInfoSearchFragment"
+        android:label="fragment_product_info_search"
+        tools:layout="@layout/fragment_product_info_search" />
 </navigation>
