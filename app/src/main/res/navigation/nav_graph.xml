@@ -59,11 +59,16 @@
     </fragment>
     <fragment
         android:id="@+id/salesAssociateHomeFragment"
-        android:name="com.tri_devs.easytrack.SalesAssociateHomeFragment"
+        android:name="com.tri_devs.easytrack.barcodescanning.SalesAssociateHomeFragment"
         android:label="fragment_sales_associate_home"
         tools:layout="@layout/fragment_sales_associate_home" >
         <action
             android:id="@+id/action_logout_sales"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/barcodeScanningFragment"
+        android:name="com.tri_devs.easytrack.BarcodeScanningFragment"
+        android:label="fragment_barcode_scanning"
+        tools:layout="@layout/fragment_barcode_scanning" />
 </navigation>

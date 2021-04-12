@@ -1,4 +1,4 @@
-package com.tri_devs.easytrack
+package com.tri_devs.easytrack.barcodescanning
 
 
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.tri_devs.easytrack.R
 import com.tri_devs.easytrack.databinding.FragmentSalesAssociateHomeBinding
 
 
