@@ -36,9 +36,10 @@ class DepartmentManagerHomeFragment : Fragment() {
         findNavController().navigate(action)
     }
     private fun searchProductName(){
-//        val intent = Intent(this, ProductInformationDetailsActivity::class.java)
-//        intent.putExtra("inputType","name")
-//        startActivity(intent)
+        val input = "name"
+        val action = DepartmentManagerHomeFragmentDirections.
+        actionDepartmentManagerHomeFragmentToProductInformationDetailsFragment(input)
+        findNavController().navigate(action)
     }
     private fun viewAllProducts() {
         findNavController().navigate(R.id.action_departmentManagerHomeFragment_to_storeInventoryActivity)
