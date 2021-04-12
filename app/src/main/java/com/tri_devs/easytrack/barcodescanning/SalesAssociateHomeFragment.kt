@@ -46,7 +46,7 @@ class SalesAssociateHomeFragment : Fragment() {
     }
 
     fun view(){
-        //
+        findNavController().navigate(R.id.action_salesAssociateHomeFragment_to_storeInventoryActivity)
     }
 
 }

@@ -71,6 +71,12 @@
         <action
             android:id="@+id/action_salesAssociateHomeFragment_to_productInfoSearchFragment"
             app:destination="@id/productInfoSearchFragment" />
+        <action
+            android:id="@+id/action_salesAssociateHomeFragment_to_storeInventoryActivity"
+            app:destination="@id/storeInventoryActivity" />
+        <action
+            android:id="@+id/action_salesAssociateHomeFragment_to_seachProductNameFragment"
+            app:destination="@id/seachProductNameFragment" />
     </fragment>
     <fragment
         android:id="@+id/barcodeScanningFragment"
@@ -89,4 +95,9 @@
         android:name="com.tri_devs.easytrack.barcodescanning.ProductInfoSearchFragment"
         android:label="fragment_product_info_search"
         tools:layout="@layout/fragment_product_info_search" />
+    <fragment
+        android:id="@+id/seachProductNameFragment"
+        android:name="com.tri_devs.easytrack.SeachProductNameFragment"
+        android:label="fragment_seach_product_name"
+        tools:layout="@layout/fragment_seach_product_name" />
 </navigation>
