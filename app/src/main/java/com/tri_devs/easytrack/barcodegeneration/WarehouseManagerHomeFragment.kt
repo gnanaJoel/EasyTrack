@@ -24,7 +24,7 @@ class WarehouseManagerHomeFragment : Fragment() {
             findNavController().navigate(R.id.action_warehouseManagerHomeFragment_to_warehouseManagerInsertNewProductInfoFragment)
         }
         binding.btnViewAllProducts.setOnClickListener {
-
+            findNavController().navigate(R.id.action_warehouseManagerHomeFragment_to_storeInventoryActivity)
         }
 
         binding.btnLogout.setOnClickListener {

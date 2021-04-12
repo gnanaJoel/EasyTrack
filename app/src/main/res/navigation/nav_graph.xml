@@ -25,15 +25,17 @@
         <action
             android:id="@+id/action_warehouseManagerHomeFragment_to_warehouseManagerInsertNewProductInfoFragment"
             app:destination="@id/warehouseManagerInsertNewProductInfoFragment" />
+        <action
+            android:id="@+id/action_warehouseManagerHomeFragment_to_storeInventoryActivity"
+            app:destination="@id/storeInventoryActivity" />
     </fragment>
     <fragment
         android:id="@+id/warehouseManagerInsertNewProductInfoFragment"
         android:name="com.tri_devs.easytrack.barcodegeneration.WarehouseManagerInsertNewProductInfoFragment"
         android:label="fragment_warehouse_manager_insert_new_product_info"
         tools:layout="@layout/fragment_warehouse_manager_insert_new_product_info" />
-    <fragment
-        android:id="@+id/productFragment"
-        android:name="com.tri_devs.easytrack.ProductFragment"
-        android:label="fragment_product_list"
-        tools:layout="@layout/fragment_product_list" />
+    <activity
+        android:id="@+id/storeInventoryActivity"
+        android:name="com.tri_devs.easytrack.store_inventory.StoreInventoryActivity"
+        android:label="StoreInventoryActivity" />
 </navigation>
