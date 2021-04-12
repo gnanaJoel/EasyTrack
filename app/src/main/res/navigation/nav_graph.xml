@@ -105,7 +105,11 @@
         tools:layout="@layout/fragment_search_product_name" />
     <fragment
         android:id="@+id/departmentManagerHomeFragment"
-        android:name="com.tri_devs.easytrack.DepartmentManagerHomeFragment"
+        android:name="com.tri_devs.easytrack.productInfoUpdate.DepartmentManagerHomeFragment"
         android:label="fragment_department_manager_home"
-        tools:layout="@layout/fragment_department_manager_home" />
+        tools:layout="@layout/fragment_department_manager_home" >
+        <action
+            android:id="@+id/action_logout_department"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>
