@@ -18,5 +18,9 @@
         android:id="@+id/warehouseManagerHomeFragment"
         android:name="com.tri_devs.easytrack.WarehouseManagerHomeFragment"
         android:label="fragment_warehouse_manager_home"
-        tools:layout="@layout/fragment_warehouse_manager_home" />
+        tools:layout="@layout/fragment_warehouse_manager_home" >
+        <action
+            android:id="@+id/action_logout_warehouse"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>

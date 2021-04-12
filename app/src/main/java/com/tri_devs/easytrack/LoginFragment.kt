@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.tri_devs.easytrack.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
@@ -37,7 +38,7 @@ class LoginFragment : Fragment() {
 
         else{
             if(username == "Ware100" && password == "ware100"){
-                //
+                findNavController().navigate(R.id.action_loginFragment_to_warehouseManagerHomeFragment)
             }
             else if(username == "Sales100" && password == "sales100"){
                 //
