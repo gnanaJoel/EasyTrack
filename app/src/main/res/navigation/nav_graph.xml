@@ -71,7 +71,7 @@
     </fragment>
     <fragment
         android:id="@+id/barcodeScanningFragment"
-        android:name="com.tri_devs.easytrack.BarcodeScanningFragment"
+        android:name="com.tri_devs.easytrack.barcodescanning.BarcodeScanningFragment"
         android:label="fragment_barcode_scanning"
         tools:layout="@layout/fragment_barcode_scanning" >
         <argument

@@ -1,15 +1,13 @@
-package com.tri_devs.easytrack
+package com.tri_devs.easytrack.barcodescanning
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
-import com.tri_devs.easytrack.barcodescanning.ProductInfoSearch
+import com.tri_devs.easytrack.BarcodeScanningFragmentArgs
 import com.tri_devs.easytrack.databinding.FragmentBarcodeScanningBinding
-import com.tri_devs.easytrack.productInfoUpdate.ProductInformationDetailsActivity
 
 class BarcodeScanningFragment : Fragment() {
     lateinit var binding: FragmentBarcodeScanningBinding
