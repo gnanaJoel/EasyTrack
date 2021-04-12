@@ -33,7 +33,11 @@
         android:id="@+id/warehouseManagerInsertNewProductInfoFragment"
         android:name="com.tri_devs.easytrack.barcodegeneration.WarehouseManagerInsertNewProductInfoFragment"
         android:label="fragment_warehouse_manager_insert_new_product_info"
-        tools:layout="@layout/fragment_warehouse_manager_insert_new_product_info" />
+        tools:layout="@layout/fragment_warehouse_manager_insert_new_product_info" >
+        <action
+            android:id="@+id/action_warehouseManagerInsertNewProductInfoFragment_to_warehouseManagerConfirmInsertFragment"
+            app:destination="@id/warehouseManagerConfirmInsertFragment" />
+    </fragment>
     <activity
         android:id="@+id/storeInventoryActivity"
         android:name="com.tri_devs.easytrack.store_inventory.StoreInventoryActivity"
@@ -42,5 +46,12 @@
         android:id="@+id/warehouseManagerConfirmInsertFragment"
         android:name="com.tri_devs.easytrack.WarehouseManagerConfirmInsertFragment"
         android:label="fragment_warehouse_manager_confirm_insert"
-        tools:layout="@layout/fragment_warehouse_manager_confirm_insert" />
+        tools:layout="@layout/fragment_warehouse_manager_confirm_insert" >
+        <action
+            android:id="@+id/action_no"
+            app:destination="@id/warehouseManagerInsertNewProductInfoFragment" />
+        <action
+            android:id="@+id/action_yes"
+            app:destination="@id/warehouseManagerHomeFragment" />
+    </fragment>
 </navigation>

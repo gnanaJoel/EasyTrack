@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.tri_devs.easytrack.R
 import com.tri_devs.easytrack.barcodegeneration.WarehouseManagerConfirmInsert
 import com.tri_devs.easytrack.databinding.FragmentWarehouseManagerInsertNewProductInfoBinding
 
@@ -26,7 +28,8 @@ class WarehouseManagerInsertNewProductInfoFragment : Fragment() {
     }
 
     fun submit(){
-        //
+        findNavController().navigate(
+            R.id.action_warehouseManagerInsertNewProductInfoFragment_to_warehouseManagerConfirmInsertFragment)
     }
 
 }
