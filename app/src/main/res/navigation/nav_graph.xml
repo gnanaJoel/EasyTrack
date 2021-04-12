@@ -44,7 +44,7 @@
         android:label="StoreInventoryActivity" />
     <fragment
         android:id="@+id/warehouseManagerConfirmInsertFragment"
-        android:name="com.tri_devs.easytrack.WarehouseManagerConfirmInsertFragment"
+        android:name="com.tri_devs.easytrack.barcodegeneration.WarehouseManagerConfirmInsertFragment"
         android:label="fragment_warehouse_manager_confirm_insert"
         tools:layout="@layout/fragment_warehouse_manager_confirm_insert" >
         <action
