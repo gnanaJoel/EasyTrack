@@ -92,6 +92,9 @@
         <action
             android:id="@+id/action_barcodeScanningFragment_to_productInfoSearchFragment"
             app:destination="@id/productInfoSearchFragment" />
+        <action
+            android:id="@+id/action_barcodeScanningFragment_to_productInformationDetailsFragment"
+            app:destination="@id/productInformationDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/productInfoSearchFragment"
@@ -125,5 +128,9 @@
         android:id="@+id/productInformationDetailsFragment"
         android:name="com.tri_devs.easytrack.ProductInformationDetailsFragment"
         android:label="fragment_product_information_details"
-        tools:layout="@layout/fragment_product_information_details" />
+        tools:layout="@layout/fragment_product_information_details" >
+        <argument
+            android:name="input"
+            app:argType="string" />
+    </fragment>
 </navigation>

@@ -28,9 +28,10 @@ class BarcodeScanningFragment : Fragment() {
                 findNavController().navigate(R.id.action_barcodeScanningFragment_to_productInfoSearchFragment)
             }
             if(scan == "deptScan"){
-//                val intent = Intent(this, ProductInformationDetailsActivity::class.java)
-//                intent.putExtra("inputType","scan")
-//                startActivity(intent)
+                val input = "scan"
+                val action = BarcodeScanningFragmentDirections.
+                actionBarcodeScanningFragmentToProductInformationDetailsFragment(input)
+                findNavController().navigate(action)
             }
         }
 
