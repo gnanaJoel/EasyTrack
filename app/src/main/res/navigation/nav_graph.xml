@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_loginFragment_to_salesAssociateHomeFragment"
             app:destination="@id/salesAssociateHomeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_departmentManagerHomeFragment"
+            app:destination="@id/departmentManagerHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/warehouseManagerHomeFragment"

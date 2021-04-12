@@ -42,7 +42,7 @@ class SalesAssociateHomeFragment : Fragment() {
     }
 
     fun search(){
-        //
+        findNavController().navigate(R.id.action_salesAssociateHomeFragment_to_seachProductNameFragment)
     }
 
     fun view(){

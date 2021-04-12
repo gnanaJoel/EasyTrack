@@ -44,7 +44,7 @@ class LoginFragment : Fragment() {
                 findNavController().navigate(R.id.action_loginFragment_to_salesAssociateHomeFragment)
             }
             else if(username == "Dept100" && password == "dept100"){
-                //
+                findNavController().navigate(R.id.action_loginFragment_to_departmentManagerHomeFragment)
             }
 
             else{
