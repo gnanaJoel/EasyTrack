@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.tri_devs.easytrack.BarcodeScanningFragmentArgs
+import com.tri_devs.easytrack.R
 import com.tri_devs.easytrack.databinding.FragmentBarcodeScanningBinding
 
 class BarcodeScanningFragment : Fragment() {
@@ -24,8 +26,7 @@ class BarcodeScanningFragment : Fragment() {
 
         binding.btnScanThis.setOnClickListener {
             if(scan == "salesScan") {
-//                val intent = Intent(this, ProductInfoSearch::class.java)
-//                startActivity(intent)
+                findNavController().navigate(R.id.action_barcodeScanningFragment_to_productInfoSearchFragment)
             }
             if(scan == "deptScan"){
 //                val intent = Intent(this, ProductInformationDetailsActivity::class.java)

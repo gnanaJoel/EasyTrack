@@ -80,6 +80,9 @@
         <argument
             android:name="scan"
             app:argType="string" />
+        <action
+            android:id="@+id/action_barcodeScanningFragment_to_productInfoSearchFragment"
+            app:destination="@id/productInfoSearchFragment" />
     </fragment>
     <fragment
         android:id="@+id/productInfoSearchFragment"
