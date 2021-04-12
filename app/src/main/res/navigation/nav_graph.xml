@@ -97,7 +97,7 @@
         tools:layout="@layout/fragment_product_info_search" />
     <fragment
         android:id="@+id/seachProductNameFragment"
-        android:name="com.tri_devs.easytrack.SeachProductNameFragment"
+        android:name="com.tri_devs.easytrack.barcodescanning.SearchProductNameFragment"
         android:label="fragment_seach_product_name"
-        tools:layout="@layout/fragment_seach_product_name" />
+        tools:layout="@layout/fragment_search_product_name" />
 </navigation>
