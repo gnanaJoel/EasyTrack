@@ -8,8 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.tri_devs.easytrack.ProductInformationDetailsFragmentArgs
+import com.tri_devs.easytrack.R
 import com.tri_devs.easytrack.databinding.FragmentProductInformationDetailsBinding
 
 class ProductInformationDetailsFragment : Fragment() {
@@ -49,8 +50,7 @@ class ProductInformationDetailsFragment : Fragment() {
     }
 
     private fun backToMenu(){
-        val intent = Intent(activity, DepartmentManagerHomeActivity::class.java)
-        startActivity(intent)
+        findNavController().navigate(R.id.action_productInformationDetailsFragment_to_departmentManagerHomeFragment)
     }
 
     private fun confirmationDialog(){
