@@ -33,6 +33,15 @@
                 android:orientation="vertical" >
 
                 <Button
+                    android:id="@+id/btnSearchProductScan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="55dp"
+                    android:text="Update Product by Scan"
+                    android:textSize="30dp" />
+
+                <Button
                     android:id="@+id/btnSearchProductName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -59,14 +68,6 @@
                     android:text="Logout"
                     android:textSize="30dp" />
 
-                <Button
-                    android:id="@+id/btnSearchProductScan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="30dp"
-                    android:layout_marginTop="55dp"
-                    android:text="Update Product by Scan"
-                    android:textSize="30dp" />
             </LinearLayout>
         </ScrollView>
 
