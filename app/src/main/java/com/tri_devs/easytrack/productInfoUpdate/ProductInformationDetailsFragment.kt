@@ -36,7 +36,6 @@ class ProductInformationDetailsFragment : Fragment() {
 
         binding.btnSearchByName.setOnClickListener { searchProductByName() }
         binding.btnSubmit.setOnClickListener {  submitUpdate() }
-        binding.btnBack.setOnClickListener { backToMenu() }
 
         return binding.root
     }
@@ -49,9 +48,6 @@ class ProductInformationDetailsFragment : Fragment() {
         confirmationDialog()
     }
 
-    private fun backToMenu(){
-        findNavController().navigate(R.id.action_productInformationDetailsFragment_to_departmentManagerHomeFragment)
-    }
 
     private fun confirmationDialog(){
         val dialogBuilder = AlertDialog.Builder(requireActivity())
