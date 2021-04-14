@@ -79,7 +79,35 @@ class ProductInformationDetailsFragment : Fragment() {
     }
 
     private fun searchProductByName() {
-        TODO("Not yet implemented")
+        val prodName = binding.etProductName.text
+        val query = productsRef.whereEqualTo("name",prodName)
+        query.get().addOnSuccessListener { documents ->
+            for (document in documents) {
+                Log.d(TAG, "${document.id} => ${document.data}")
+                binding.etProductName.setText(document.get("name").toString())
+                binding.etPrice.setText("$"+document.get("price").toString())
+                binding.etSalesPrice.setText("$"+document.get("salesPrice").toString())
+                binding.etDescription.setText(document.get("description").toString())
+                binding.etQuantity.setText(document.get("quantity").toString())
+                binding.tvUPC.text = document.get("upcNumber").toString()
+                binding.etBeginSalesDate.setText(document.get("startSalesDate").toString())
+                binding.etEndSalesDate.setText(document.get("endSalesDate").toString())
+                when {
+                    document.get("sales").toString().toInt() == 0 -> {
+                        binding.rgSalesHolidays.check(binding.rb1.id)
+                    }
+                    document.get("sales").toString().toInt() == 1 -> {
+                        binding.rgSalesHolidays.check(binding.rb2.id)
+                    }
+                    else -> {
+                        binding.rgSalesHolidays.check(binding.rb3.id)
+                    }
+                }
+            }
+        }
+            .addOnFailureListener { exception ->
+                Log.w(TAG, "Error getting documents: ", exception)
+            }
     }
 
     private fun submitUpdate() {
