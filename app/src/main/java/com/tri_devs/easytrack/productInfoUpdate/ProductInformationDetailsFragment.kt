@@ -1,6 +1,5 @@
 package com.tri_devs.easytrack.productInfoUpdate
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.util.Log
@@ -10,12 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.tri_devs.easytrack.R
 import com.tri_devs.easytrack.databinding.FragmentProductInformationDetailsBinding
 
 class ProductInformationDetailsFragment : Fragment() {
@@ -24,7 +20,6 @@ class ProductInformationDetailsFragment : Fragment() {
     val db = Firebase.firestore
     val productsRef = db.collection("products")
     val TAG = "Prod Info Details"
-    val upcNumber = binding.tvUPC.text
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -174,11 +169,11 @@ class ProductInformationDetailsFragment : Fragment() {
                     "name",binding.etProductName.text.toString(),
                     "price",binding.etPrice.text.toString().toFloat(),
                     "salesPrice",binding.etSalesPrice.text.toString().toFloat(),
-                    "description",binding.etDescription.toString(),
-                    "quantity",binding.etQuantity.toString().toInt(),
+                    "description",binding.etDescription.text.toString(),
+                    "quantity",binding.etQuantity.text.toString().toInt(),
                     "upcNumber",binding.tvUPC.text,
-                    "startSalesDate",binding.etBeginSalesDate.toString(),
-                    "endSalesDate",binding.etEndSalesDate.toString(),
+                    "startSalesDate",binding.etBeginSalesDate.text.toString(),
+                    "endSalesDate",binding.etEndSalesDate.text.toString(),
                     "sales", salesNum
                 )
                 dialog.dismiss()
