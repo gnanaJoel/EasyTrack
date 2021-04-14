@@ -164,8 +164,8 @@ class ProductInformationDetailsFragment : Fragment() {
                         2
                     }
                 }
-                val price = String.format("%.2f",binding.etPrice.text.toString())
-                val salesPrice = String.format("%.2f",binding.etSalesPrice.text.toString())
+                val price = String.format("%.2f",binding.etPrice.text.toString().toFloat())
+                val salesPrice = String.format("%.2f",binding.etSalesPrice.text.toString().toFloat())
                 productsRef.document(upcNumber as String).update(
                     "name",binding.etProductName.text.toString(),
                     "price",price.toFloat(),
