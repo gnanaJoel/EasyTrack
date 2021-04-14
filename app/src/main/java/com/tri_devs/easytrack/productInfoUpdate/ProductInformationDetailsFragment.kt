@@ -46,6 +46,20 @@ class ProductInformationDetailsFragment : Fragment() {
                 for (document in documents) {
                     Log.d(TAG, "${document.id} => ${document.data}")
                     binding.etProductName.setText(document.get("name").toString())
+                    binding.etPrice.setText("$"+document.get("price").toString())
+                    binding.etSalesPrice.setText("$"+document.get("salesPrice").toString())
+                    binding.etDescription.setText(document.get("description").toString())
+                    binding.etQuantity.setText(document.get("quantity").toString())
+                    binding.tvUPC.text = document.get("upcNumber").toString()
+                    binding.etBeginSalesDate.setText(document.get("startSalesDate").toString())
+                    binding.etEndSalesDate.setText(document.get("endSalesDate").toString())
+                    if (document.get("sales") == 0){
+                        binding.rgSalesHolidays.check(binding.rb1.id)
+                    }else if (document.get("sales") == 1){
+                        binding.rgSalesHolidays.check(binding.rb2.id)
+                    }else{
+                        binding.rgSalesHolidays.check(binding.rb3.id)
+                    }
                 }
             }
                 .addOnFailureListener { exception ->
