@@ -53,12 +53,16 @@ class ProductInformationDetailsFragment : Fragment() {
                     binding.tvUPC.text = document.get("upcNumber").toString()
                     binding.etBeginSalesDate.setText(document.get("startSalesDate").toString())
                     binding.etEndSalesDate.setText(document.get("endSalesDate").toString())
-                    if (document.get("sales") == 0){
-                        binding.rgSalesHolidays.check(binding.rb1.id)
-                    }else if (document.get("sales") == 1){
-                        binding.rgSalesHolidays.check(binding.rb2.id)
-                    }else{
-                        binding.rgSalesHolidays.check(binding.rb3.id)
+                    when {
+                        document.get("sales").toString().toInt() == 0 -> {
+                            binding.rgSalesHolidays.check(binding.rb1.id)
+                        }
+                        document.get("sales").toString().toInt() == 1 -> {
+                            binding.rgSalesHolidays.check(binding.rb2.id)
+                        }
+                        else -> {
+                            binding.rgSalesHolidays.check(binding.rb3.id)
+                        }
                     }
                 }
             }
