@@ -164,10 +164,12 @@ class ProductInformationDetailsFragment : Fragment() {
                         2
                     }
                 }
+                val price = "%.2f".format(binding.etPrice.text.toString()).toFloat()
+                val salesPrice = "%.2f".format(binding.etSalesPrice.text.toString()).toFloat()
                 productsRef.document(upcNumber as String).update(
                     "name",binding.etProductName.text.toString(),
-                    "price",binding.etPrice.text.toString().toFloat(),
-                    "salesPrice",binding.etSalesPrice.text.toString().toFloat(),
+                    "price",price,
+                    "salesPrice",salesPrice,
                     "description",binding.etDescription.text.toString(),
                     "quantity",binding.etQuantity.text.toString().toInt(),
                     "upcNumber",binding.tvUPC.text,

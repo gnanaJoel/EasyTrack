@@ -78,6 +78,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:hint="@string/_89_99"
+                        android:inputType="numberDecimal"
                         android:textSize="20sp" />
 
                 </LinearLayout>
@@ -102,6 +103,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:hint="@string/_79_99"
+                        android:inputType="numberDecimal"
                         android:textColor="#E11313"
                         android:textSize="20sp" />
 
