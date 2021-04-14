@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.tri_devs.easytrack.R
@@ -38,21 +39,23 @@ class ProductInformationDetailsFragment : Fragment() {
         }else{
             binding.etProductName.isClickable = false
             binding.etProductName.inputType = InputType.TYPE_NULL
+
+            //db part
+            val query = productsRef.whereEqualTo("upcNumber","91827364598")
+            query.get().addOnSuccessListener { documents ->
+                for (document in documents) {
+                    Log.d(TAG, "${document.id} => ${document.data}")
+                    binding.etProductName.setText(document.get("name").toString())
+                }
+            }
+                .addOnFailureListener { exception ->
+                    Log.w(TAG, "Error getting documents: ", exception)
+                }
         }
 
         binding.btnSearchByName.setOnClickListener { searchProductByName() }
         binding.btnSubmit.setOnClickListener {  submitUpdate() }
 
-        //db part
-        val query = productsRef.whereEqualTo("upcNumber","91827364598")
-        query.get().addOnSuccessListener { documents ->
-            for (document in documents) {
-                Log.d(TAG, "${document.id} => ${document.data}")
-            }
-        }
-            .addOnFailureListener { exception ->
-                Log.w(TAG, "Error getting documents: ", exception)
-            }
 
         return binding.root
     }
