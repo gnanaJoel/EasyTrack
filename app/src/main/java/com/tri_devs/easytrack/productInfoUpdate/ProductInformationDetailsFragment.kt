@@ -24,6 +24,7 @@ class ProductInformationDetailsFragment : Fragment() {
     val db = Firebase.firestore
     val productsRef = db.collection("products")
     val TAG = "Prod Info Details"
+    val upcNumber = binding.tvUPC.text
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,35 +44,38 @@ class ProductInformationDetailsFragment : Fragment() {
             binding.etProductName.inputType = InputType.TYPE_NULL
 
             //db part
-            val query = productsRef.document("91827364598")
-            query.get().addOnSuccessListener { document ->
-                if (document != null) {
-                    Log.d(TAG, "DocumentSnapshot data: ${document.data}")
-                    binding.etProductName.setText(document.get("name").toString())
-                    binding.etPrice.setText("$"+document.get("price").toString())
-                    binding.etSalesPrice.setText("$"+document.get("salesPrice").toString())
-                    binding.etDescription.setText(document.get("description").toString())
-                    binding.etQuantity.setText(document.get("quantity").toString())
-                    binding.tvUPC.text = document.id
-                    binding.etBeginSalesDate.setText(document.get("startSalesDate").toString())
-                    binding.etEndSalesDate.setText(document.get("endSalesDate").toString())
-                    when {
-                        document.get("sales").toString().toInt() == 0 -> {
-                            binding.rgSalesHolidays.check(binding.rb1.id)
+            val query = productsRef.whereEqualTo("upcNumber","91827364598")
+            query.get().addOnSuccessListener { documents ->
+                for (document in documents) {
+                    if (document != null){
+                        Log.d(TAG, "${document.id} => ${document.data}")
+                        binding.etProductName.setText(document.get("name").toString())
+                        binding.etPrice.setText("$"+document.get("price").toString())
+                        binding.etSalesPrice.setText("$"+document.get("salesPrice").toString())
+                        binding.etDescription.setText(document.get("description").toString())
+                        binding.etQuantity.setText(document.get("quantity").toString())
+                        binding.tvUPC.text = document.get("upcNumber").toString()
+                        binding.etBeginSalesDate.setText(document.get("startSalesDate").toString())
+                        binding.etEndSalesDate.setText(document.get("endSalesDate").toString())
+                        when {
+                            document.get("sales").toString().toInt() == 0 -> {
+                                binding.rgSalesHolidays.check(binding.rb1.id)
+                            }
+                            document.get("sales").toString().toInt() == 1 -> {
+                                binding.rgSalesHolidays.check(binding.rb2.id)
+                            }
+                            else -> {
+                                binding.rgSalesHolidays.check(binding.rb3.id)
+                            }
                         }
-                        document.get("sales").toString().toInt() == 1 -> {
-                            binding.rgSalesHolidays.check(binding.rb2.id)
-                        }
-                        else -> {
-                            binding.rgSalesHolidays.check(binding.rb3.id)
-                        }
+
+                    }else{
+                        Toast.makeText(activity, "Invalid UPC Number", Toast.LENGTH_SHORT).show()
                     }
-                } else {
-                    Log.d(TAG, "No such product")
                 }
             }
                 .addOnFailureListener { exception ->
-                    Log.d(TAG, "get failed with ", exception)
+                    Log.w(TAG, "Error getting documents: ", exception)
                 }
         }
 
@@ -84,32 +88,38 @@ class ProductInformationDetailsFragment : Fragment() {
 
     private fun searchProductByName() {
         val prodName = binding.etProductName.text
-        if (prodName.toString().isNullOrBlank()){
+        if (prodName.toString().isBlank()){
             Toast.makeText(activity, "Please enter a product name", Toast.LENGTH_SHORT).show()
         }
         else{
             val query = productsRef.whereEqualTo("name",prodName.toString())
             query.get().addOnSuccessListener { documents ->
                 for (document in documents) {
-                    Log.d(TAG, "${document.id} => ${document.data}")
-                    binding.etProductName.setText(document.get("name").toString())
-                    binding.etPrice.setText("$"+document.get("price").toString())
-                    binding.etSalesPrice.setText("$"+document.get("salesPrice").toString())
-                    binding.etDescription.setText(document.get("description").toString())
-                    binding.etQuantity.setText(document.get("quantity").toString())
-                    binding.tvUPC.text = document.get("upcNumber").toString()
-                    binding.etBeginSalesDate.setText(document.get("startSalesDate").toString())
-                    binding.etEndSalesDate.setText(document.get("endSalesDate").toString())
-                    when {
-                        document.get("sales").toString().toInt() == 0 -> {
-                            binding.rgSalesHolidays.check(binding.rb1.id)
+                    if (document != null){
+                        Log.d(TAG, "${document.id} => ${document.data}")
+                        binding.etProductName.setText(document.get("name").toString())
+                        binding.etPrice.setText("$"+document.get("price").toString())
+                        binding.etSalesPrice.setText("$"+document.get("salesPrice").toString())
+                        binding.etDescription.setText(document.get("description").toString())
+                        binding.etQuantity.setText(document.get("quantity").toString())
+                        binding.tvUPC.text = document.get("upcNumber").toString()
+                        binding.etBeginSalesDate.setText(document.get("startSalesDate").toString())
+                        binding.etEndSalesDate.setText(document.get("endSalesDate").toString())
+                        when {
+                            document.get("sales").toString().toInt() == 0 -> {
+                                binding.rgSalesHolidays.check(binding.rb1.id)
+                            }
+                            document.get("sales").toString().toInt() == 1 -> {
+                                binding.rgSalesHolidays.check(binding.rb2.id)
+                            }
+                            else -> {
+                                binding.rgSalesHolidays.check(binding.rb3.id)
+                            }
                         }
-                        document.get("sales").toString().toInt() == 1 -> {
-                            binding.rgSalesHolidays.check(binding.rb2.id)
-                        }
-                        else -> {
-                            binding.rgSalesHolidays.check(binding.rb3.id)
-                        }
+
+                    }
+                    else{
+                        Toast.makeText(activity, "Invalid Product Name", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
@@ -123,6 +133,15 @@ class ProductInformationDetailsFragment : Fragment() {
         val upcNumber = binding.tvUPC.text
         if (upcNumber.isNullOrBlank()){
             Toast.makeText(activity, "Needs UPC Number to update", Toast.LENGTH_SHORT).show()
+        }
+        else if(binding.etProductName.text.toString().isBlank() ||
+            binding.etPrice.text.toString().isBlank() ||
+                binding.etSalesPrice.text.toString().isBlank() ||
+                binding.etDescription.text.toString().isBlank() ||
+                binding.etQuantity.text.toString().isBlank() ||
+                binding.etBeginSalesDate.text.toString().isBlank()||
+                binding.etEndSalesDate.text.toString().isBlank()){
+            Toast.makeText(activity, "1 or more required fields are blank", Toast.LENGTH_SHORT).show()
         }
         else{
             confirmationDialog()
@@ -140,7 +159,28 @@ class ProductInformationDetailsFragment : Fragment() {
             // positive button text and action
             .setPositiveButton("Confirm") { dialog, _ ->
                 val upcNumber = binding.tvUPC.text
-
+                var salesNum = when{
+                    binding.rb1.isChecked -> {
+                        0
+                    }
+                    binding.rb2.isChecked ->{
+                        1
+                    }
+                    else ->{
+                        2
+                    }
+                }
+                productsRef.document(upcNumber as String).update(
+                    "name",binding.etProductName.text.toString(),
+                    "price",binding.etPrice.text.toString().toFloat(),
+                    "salesPrice",binding.etSalesPrice.text.toString().toFloat(),
+                    "description",binding.etDescription.toString(),
+                    "quantity",binding.etQuantity.toString().toInt(),
+                    "upcNumber",binding.tvUPC.text,
+                    "startSalesDate",binding.etBeginSalesDate.toString(),
+                    "endSalesDate",binding.etEndSalesDate.toString(),
+                    "sales", salesNum
+                )
                 dialog.dismiss()
             }
             // negative button text and action
