@@ -35,8 +35,7 @@ class ProductInformationDetailsFragment : Fragment() {
             binding.etProductName.inputType = InputType.TYPE_CLASS_TEXT
             binding.tvUPC.text = ""
         }else{
-            binding.etProductName.isClickable = false
-            binding.etProductName.inputType = InputType.TYPE_NULL
+            binding.etProductName.inputType = InputType.TYPE_CLASS_TEXT
 
             //db part
             val query = productsRef.whereEqualTo("upcNumber","91827364598")
