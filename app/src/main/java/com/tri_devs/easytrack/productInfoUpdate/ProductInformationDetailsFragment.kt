@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -36,6 +37,7 @@ class ProductInformationDetailsFragment : Fragment() {
         if(input == "name"){
             binding.etProductName.text.clear()
             binding.etProductName.inputType = InputType.TYPE_CLASS_TEXT
+            binding.tvUPC.text = ""
         }else{
             binding.etProductName.isClickable = false
             binding.etProductName.inputType = InputType.TYPE_NULL
@@ -80,38 +82,49 @@ class ProductInformationDetailsFragment : Fragment() {
 
     private fun searchProductByName() {
         val prodName = binding.etProductName.text
-        val query = productsRef.whereEqualTo("name",prodName)
-        query.get().addOnSuccessListener { documents ->
-            for (document in documents) {
-                Log.d(TAG, "${document.id} => ${document.data}")
-                binding.etProductName.setText(document.get("name").toString())
-                binding.etPrice.setText("$"+document.get("price").toString())
-                binding.etSalesPrice.setText("$"+document.get("salesPrice").toString())
-                binding.etDescription.setText(document.get("description").toString())
-                binding.etQuantity.setText(document.get("quantity").toString())
-                binding.tvUPC.text = document.get("upcNumber").toString()
-                binding.etBeginSalesDate.setText(document.get("startSalesDate").toString())
-                binding.etEndSalesDate.setText(document.get("endSalesDate").toString())
-                when {
-                    document.get("sales").toString().toInt() == 0 -> {
-                        binding.rgSalesHolidays.check(binding.rb1.id)
-                    }
-                    document.get("sales").toString().toInt() == 1 -> {
-                        binding.rgSalesHolidays.check(binding.rb2.id)
-                    }
-                    else -> {
-                        binding.rgSalesHolidays.check(binding.rb3.id)
+        if (prodName.toString().isNullOrBlank()){
+            Toast.makeText(activity, "Please enter a product name", Toast.LENGTH_SHORT).show()
+        }
+        else{
+            val query = productsRef.whereEqualTo("name",prodName.toString())
+            query.get().addOnSuccessListener { documents ->
+                for (document in documents) {
+                    Log.d(TAG, "${document.id} => ${document.data}")
+                    binding.etProductName.setText(document.get("name").toString())
+                    binding.etPrice.setText("$"+document.get("price").toString())
+                    binding.etSalesPrice.setText("$"+document.get("salesPrice").toString())
+                    binding.etDescription.setText(document.get("description").toString())
+                    binding.etQuantity.setText(document.get("quantity").toString())
+                    binding.tvUPC.text = document.get("upcNumber").toString()
+                    binding.etBeginSalesDate.setText(document.get("startSalesDate").toString())
+                    binding.etEndSalesDate.setText(document.get("endSalesDate").toString())
+                    when {
+                        document.get("sales").toString().toInt() == 0 -> {
+                            binding.rgSalesHolidays.check(binding.rb1.id)
+                        }
+                        document.get("sales").toString().toInt() == 1 -> {
+                            binding.rgSalesHolidays.check(binding.rb2.id)
+                        }
+                        else -> {
+                            binding.rgSalesHolidays.check(binding.rb3.id)
+                        }
                     }
                 }
             }
+                .addOnFailureListener { exception ->
+                    Log.w(TAG, "Error getting documents: ", exception)
+                }
         }
-            .addOnFailureListener { exception ->
-                Log.w(TAG, "Error getting documents: ", exception)
-            }
     }
 
     private fun submitUpdate() {
-        confirmationDialog()
+        val upcNumber = binding.tvUPC.text
+        if (upcNumber.isNullOrBlank()){
+            Toast.makeText(activity, "Needs UPC Number to update", Toast.LENGTH_SHORT).show()
+        }
+        else{
+            confirmationDialog()
+        }
     }
 
 
