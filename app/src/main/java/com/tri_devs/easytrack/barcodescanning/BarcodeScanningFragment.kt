@@ -29,8 +29,9 @@ class BarcodeScanningFragment : Fragment() {
             }
             if(scan == "deptScan"){
                 val input = "scan"
+                val upcNumber = "91827364598"
                 val action = BarcodeScanningFragmentDirections.
-                actionBarcodeScanningFragmentToProductInformationDetailsFragment(input)
+                actionBarcodeScanningFragmentToProductInformationDetailsFragment(input, upcNumber)
                 findNavController().navigate(action)
             }
         }
