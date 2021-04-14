@@ -43,16 +43,16 @@ class ProductInformationDetailsFragment : Fragment() {
             binding.etProductName.inputType = InputType.TYPE_NULL
 
             //db part
-            val query = productsRef.whereEqualTo("upcNumber","91827364598")
-            query.get().addOnSuccessListener { documents ->
-                for (document in documents) {
-                    Log.d(TAG, "${document.id} => ${document.data}")
+            val query = productsRef.document("91827364598")
+            query.get().addOnSuccessListener { document ->
+                if (document != null) {
+                    Log.d(TAG, "DocumentSnapshot data: ${document.data}")
                     binding.etProductName.setText(document.get("name").toString())
                     binding.etPrice.setText("$"+document.get("price").toString())
                     binding.etSalesPrice.setText("$"+document.get("salesPrice").toString())
                     binding.etDescription.setText(document.get("description").toString())
                     binding.etQuantity.setText(document.get("quantity").toString())
-                    binding.tvUPC.text = document.get("upcNumber").toString()
+                    binding.tvUPC.text = document.id
                     binding.etBeginSalesDate.setText(document.get("startSalesDate").toString())
                     binding.etEndSalesDate.setText(document.get("endSalesDate").toString())
                     when {
@@ -66,10 +66,12 @@ class ProductInformationDetailsFragment : Fragment() {
                             binding.rgSalesHolidays.check(binding.rb3.id)
                         }
                     }
+                } else {
+                    Log.d(TAG, "No such product")
                 }
             }
                 .addOnFailureListener { exception ->
-                    Log.w(TAG, "Error getting documents: ", exception)
+                    Log.d(TAG, "get failed with ", exception)
                 }
         }
 
@@ -137,6 +139,8 @@ class ProductInformationDetailsFragment : Fragment() {
             .setCancelable(false)
             // positive button text and action
             .setPositiveButton("Confirm") { dialog, _ ->
+                val upcNumber = binding.tvUPC.text
+
                 dialog.dismiss()
             }
             // negative button text and action
