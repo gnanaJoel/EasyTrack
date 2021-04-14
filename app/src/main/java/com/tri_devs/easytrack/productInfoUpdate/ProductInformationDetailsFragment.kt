@@ -44,8 +44,8 @@ class ProductInformationDetailsFragment : Fragment() {
                     if (document != null){
                         Log.d(TAG, "${document.id} => ${document.data}")
                         binding.etProductName.setText(document.get("name").toString())
-                        binding.etPrice.setText("$"+document.get("price").toString())
-                        binding.etSalesPrice.setText("$"+document.get("salesPrice").toString())
+                        binding.etPrice.setText(document.get("price").toString())
+                        binding.etSalesPrice.setText(document.get("salesPrice").toString())
                         binding.etDescription.setText(document.get("description").toString())
                         binding.etQuantity.setText(document.get("quantity").toString())
                         binding.tvUPC.text = document.get("upcNumber").toString()
@@ -92,8 +92,8 @@ class ProductInformationDetailsFragment : Fragment() {
                     if (document != null){
                         Log.d(TAG, "${document.id} => ${document.data}")
                         binding.etProductName.setText(document.get("name").toString())
-                        binding.etPrice.setText("$"+document.get("price").toString())
-                        binding.etSalesPrice.setText("$"+document.get("salesPrice").toString())
+                        binding.etPrice.setText(document.get("price").toString())
+                        binding.etSalesPrice.setText(document.get("salesPrice").toString())
                         binding.etDescription.setText(document.get("description").toString())
                         binding.etQuantity.setText(document.get("quantity").toString())
                         binding.tvUPC.text = document.get("upcNumber").toString()
@@ -164,12 +164,11 @@ class ProductInformationDetailsFragment : Fragment() {
                         2
                     }
                 }
-                val price = String.format("%.2f",binding.etPrice.text.toString().toFloat())
-                val salesPrice = String.format("%.2f",binding.etSalesPrice.text.toString().toFloat())
+
                 productsRef.document(upcNumber as String).update(
                     "name",binding.etProductName.text.toString(),
-                    "price",price.toFloat(),
-                    "salesPrice",salesPrice.toFloat(),
+                    "price",binding.etPrice.text.toString(),
+                    "salesPrice",binding.etSalesPrice.text.toString(),
                     "description",binding.etDescription.text.toString(),
                     "quantity",binding.etQuantity.text.toString().toInt(),
                     "upcNumber",binding.tvUPC.text,
