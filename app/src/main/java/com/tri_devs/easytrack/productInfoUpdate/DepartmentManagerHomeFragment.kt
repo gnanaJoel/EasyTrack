@@ -38,7 +38,7 @@ class DepartmentManagerHomeFragment : Fragment() {
     private fun searchProductName(){
         val input = "name"
         val action = DepartmentManagerHomeFragmentDirections.
-        actionDepartmentManagerHomeFragmentToProductInformationDetailsFragment(input)
+        actionDepartmentManagerHomeFragmentToProductInformationDetailsFragment(input,"")
         findNavController().navigate(action)
     }
     private fun viewAllProducts() {

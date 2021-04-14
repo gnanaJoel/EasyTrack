@@ -137,7 +137,6 @@
             app:destination="@id/departmentManagerHomeFragment" />
         <argument
             android:name="upcNumber"
-            app:argType="string"
-            app:nullable="true" />
+            app:argType="string" />
     </fragment>
 </navigation>
