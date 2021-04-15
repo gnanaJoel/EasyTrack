@@ -178,6 +178,7 @@ class ProductInformationDetailsFragment : Fragment() {
                     "sales", salesNum
                 )
                 dialog.dismiss()
+                Toast.makeText(activity, "Update Successful", Toast.LENGTH_SHORT).show()
             }
             // negative button text and action
             .setNegativeButton("Cancel") { dialog, _ ->
