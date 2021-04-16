@@ -53,14 +53,17 @@ class ProductInformationDetailsFragment : Fragment() {
                         binding.etBeginSalesDate.setText(document.get("startSalesDate").toString())
                         binding.etEndSalesDate.setText(document.get("endSalesDate").toString())
                         when {
-                            document.get("sales").toString().toInt() == 0 -> {
+                            document.get("sales").toString().toInt() == 1 -> {
                                 binding.rgSalesHolidays.check(binding.rb1.id)
                             }
-                            document.get("sales").toString().toInt() == 1 -> {
+                            document.get("sales").toString().toInt() == 2 -> {
                                 binding.rgSalesHolidays.check(binding.rb2.id)
                             }
-                            else -> {
+                            document.get("sales").toString().toInt() == 3 -> {
                                 binding.rgSalesHolidays.check(binding.rb3.id)
+                            }
+                            else ->{
+                                binding.rgSalesHolidays.clearCheck()
                             }
                         }
 
@@ -101,14 +104,17 @@ class ProductInformationDetailsFragment : Fragment() {
                         binding.etBeginSalesDate.setText(document.get("startSalesDate").toString())
                         binding.etEndSalesDate.setText(document.get("endSalesDate").toString())
                         when {
-                            document.get("sales").toString().toInt() == 0 -> {
+                            document.get("sales").toString().toInt() == 1 -> {
                                 binding.rgSalesHolidays.check(binding.rb1.id)
                             }
-                            document.get("sales").toString().toInt() == 1 -> {
+                            document.get("sales").toString().toInt() == 2 -> {
                                 binding.rgSalesHolidays.check(binding.rb2.id)
                             }
-                            else -> {
+                            document.get("sales").toString().toInt() == 3 -> {
                                 binding.rgSalesHolidays.check(binding.rb3.id)
+                            }
+                            else ->{
+                                binding.rgSalesHolidays.clearCheck()
                             }
                         }
 
@@ -133,9 +139,7 @@ class ProductInformationDetailsFragment : Fragment() {
             binding.etPrice.text.toString().isBlank() ||
                 binding.etSalesPrice.text.toString().isBlank() ||
                 binding.etDescription.text.toString().isBlank() ||
-                binding.etQuantity.text.toString().isBlank() ||
-                binding.etBeginSalesDate.text.toString().isBlank()||
-                binding.etEndSalesDate.text.toString().isBlank()){
+                binding.etQuantity.text.toString().isBlank()){
             Toast.makeText(activity, "1 or more required fields are blank", Toast.LENGTH_SHORT).show()
         }
         else{
@@ -154,16 +158,17 @@ class ProductInformationDetailsFragment : Fragment() {
             // positive button text and action
             .setPositiveButton("Confirm") { dialog, _ ->
                 val upcNumber = binding.tvUPC.text
-                var salesNum = when{
+                val salesNum = when{
                     binding.rb1.isChecked -> {
-                        0
-                    }
-                    binding.rb2.isChecked ->{
                         1
                     }
-                    else ->{
+                    binding.rb2.isChecked ->{
                         2
                     }
+                    binding.rb2.isChecked  ->{
+                        3
+                    }
+                    else -> 0
                 }
 
                 productsRef.document(upcNumber as String).update(
