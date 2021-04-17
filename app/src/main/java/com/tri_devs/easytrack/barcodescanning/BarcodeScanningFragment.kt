@@ -1,7 +1,6 @@
 package com.tri_devs.easytrack.barcodescanning
 
 import android.Manifest
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
@@ -16,7 +15,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.tri_devs.easytrack.R
 import com.tri_devs.easytrack.databinding.FragmentBarcodeScanningBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -198,8 +196,6 @@ class BarcodeScanningFragment : Fragment() {
     }
 
     fun searchBarcode(barcode: String) {
-//        val intent = Intent(this, BarcodeScanSuccessActivity::class.java)
-//        intent.putExtra("EXTRA_UPC",barcode)
         CoroutineScope(Dispatchers.Main).launch {
             delay(1000)
             val docRef = productsRef.document(barcode)
@@ -208,8 +204,10 @@ class BarcodeScanningFragment : Fragment() {
                     if (document != null) {
                         Log.d(TAG, "DocumentSnapshot data: ${document.data}")
                         val input = "scan"
-                        val upcNumber = barcode
-
+                        val action = BarcodeScanningFragmentDirections.
+                        actionBarcodeScanningFragmentToProductInformationDetailsFragment(input,
+                            barcode)
+                        findNavController().navigate(action)
                     } else {
                         Log.d(TAG, "No such document")
                     }
