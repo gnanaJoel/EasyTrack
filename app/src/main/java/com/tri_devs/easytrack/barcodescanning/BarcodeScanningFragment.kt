@@ -23,18 +23,18 @@ class BarcodeScanningFragment : Fragment() {
 
         val scan = args.scan
 
-        binding.btnScanThis.setOnClickListener {
-            if(scan == "salesScan") {
-                findNavController().navigate(R.id.action_barcodeScanningFragment_to_productInfoSearchFragment)
-            }
-            if(scan == "deptScan"){
-                val input = "scan"
-                val upcNumber = "32165409812"
-                val action = BarcodeScanningFragmentDirections.
-                actionBarcodeScanningFragmentToProductInformationDetailsFragment(input, upcNumber)
-                findNavController().navigate(action)
-            }
-        }
+//        binding.btnScanThis.setOnClickListener {
+//            if(scan == "salesScan") {
+//                findNavController().navigate(R.id.action_barcodeScanningFragment_to_productInfoSearchFragment)
+//            }
+//            if(scan == "deptScan"){
+//                val input = "scan"
+//                val upcNumber = "32165409812"
+//                val action = BarcodeScanningFragmentDirections.
+//                actionBarcodeScanningFragmentToProductInformationDetailsFragment(input, upcNumber)
+//                findNavController().navigate(action)
+//            }
+//        }
 
         return binding.root
     }
