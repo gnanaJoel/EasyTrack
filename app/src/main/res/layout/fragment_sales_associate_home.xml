@@ -26,53 +26,64 @@
             android:textStyle="bold" />
 
 
-        <Button
-            android:id="@+id/btnScan"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="150dp"
-            android:text="Scan Barcode"
-            android:textSize="20dp" />
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btnSearch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="50dp"
-            android:text="Search by Product Name"
-            android:textSize="20dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/btnView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="50dp"
-            android:text="View all Products"
-            android:textSize="20dp" />
+                <Button
+                    android:id="@+id/btnScan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="150dp"
+                    android:text="Scan Barcode"
+                    android:textSize="20dp" />
 
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="50dp"
-            android:text="Logout"
-            android:textSize="20dp" />
+                <Button
+                    android:id="@+id/btnSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="50dp"
+                    android:text="Search by Product Name"
+                    android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/txtUPC"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:text="@{String.valueOf(bndBarcode.scannedResult)}"
-            android:textColor="#E61515"
-            android:textSize="42dp"
-            android:textStyle="bold" />
+                <Button
+                    android:id="@+id/btnView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="50dp"
+                    android:text="View all Products"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/btnLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="50dp"
+                    android:text="Logout"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/txtUPC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="@{String.valueOf(bndBarcode.scannedResult)}"
+                    android:textColor="#E61515"
+                    android:textSize="42dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 </layout>
