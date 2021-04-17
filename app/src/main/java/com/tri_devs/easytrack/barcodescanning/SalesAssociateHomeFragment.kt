@@ -40,34 +40,37 @@ class SalesAssociateHomeFragment : Fragment() {
         }
 
         return binding.root
+
+        Log.d(TAG, "In the oncreate!")
     }
 
     fun scan(){
         run {
-            IntentIntegrator(activity).setOrientationLocked(false).initiateScan();
+            IntentIntegrator.forSupportFragment(this).initiateScan()
             Log.d(TAG,scannedResult)
 
         }
-
-////        val scan = "salesScan"
-//        val action = SalesAssociateHomeFragmentDirections.
-//        actionSalesAssociateHomeFragmentToBarcodeScanningFragment(scan)
-//        findNavController().navigate(action)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        var result: IntentResult? = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+        var result: IntentResult? = IntentIntegrator.
+        parseActivityResult(requestCode, resultCode, data)
 
         if(result != null){
 
             if(result.contents != null){
                 scannedResult = result.contents
                 binding.txtUPC.text = scannedResult
+                Log.d(TAG, scannedResult)
             } else {
                 binding.txtUPC.text = "scan failed"
+                Log.d(TAG, scannedResult)
+
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data)
+            Log.d(TAG, scannedResult)
+
         }
     }
 
