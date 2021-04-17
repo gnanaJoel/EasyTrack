@@ -5,7 +5,7 @@
     <data>
         <variable
             name="bndBarcode"
-            type="String" />
+            type="com.tri_devs.easytrack.barcodescanning.SalesAssociateHomeFragment" />
     </data>
 
     <LinearLayout
@@ -69,7 +69,7 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="15dp"
             android:gravity="center"
-            android:text="@{bndBarcode}"
+            android:text="@{String.valueOf(bndBarcode.scannedResult)}"
             android:textColor="#E61515"
             android:textSize="42dp"
             android:textStyle="bold" />
