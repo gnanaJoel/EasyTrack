@@ -255,7 +255,7 @@ class BarcodeScanningFragment : Fragment() {
             document.get("description").toString(),
             document.get("quantity").toString().toInt(),
             document.get("upcNumber").toString().toLong(),
-            document.get("retailPrice").toString(),
+            document.get("price").toString(),
             document.get("salesPrice").toString(),
             document.get("startSalesDate").toString(),
             document.get("endSalesDate").toString()
