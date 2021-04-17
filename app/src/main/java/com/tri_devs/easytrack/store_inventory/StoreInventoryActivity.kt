@@ -40,7 +40,8 @@ class StoreInventoryActivity : AppCompatActivity() {
                         document.get("upcNumber").toString().toLong(),
                         document.get("price").toString(),
                         document.get("salesPrice").toString(),
-                        document.get("startSalesDate").toString()+"-"+document.get("endSalesDate").toString())
+                        document.get("startSalesDate").toString()+"-",
+                        document.get("endSalesDate").toString())
                     storeProductList.add(product)
                     Log.d(TAG,"inside for loop" + storeProductList.size.toString())
                 }
