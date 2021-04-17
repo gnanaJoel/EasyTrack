@@ -51,7 +51,5 @@ class StoreInventoryActivity : AppCompatActivity() {
                 Log.d(TAG, "Error getting documents: ", exception)
             }
 
-
-
     }
 }
