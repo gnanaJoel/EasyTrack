@@ -3,6 +3,7 @@ package com.tri_devs.easytrack.barcodescanning
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +20,7 @@ import com.tri_devs.easytrack.databinding.FragmentSalesAssociateHomeBinding
 class SalesAssociateHomeFragment : Fragment() {
     lateinit var binding: FragmentSalesAssociateHomeBinding
     var scannedResult: String = ""
+    val TAG = "SCAN"
 
 
     override fun onCreateView(
@@ -43,6 +45,8 @@ class SalesAssociateHomeFragment : Fragment() {
     fun scan(){
         run {
             IntentIntegrator(activity).setOrientationLocked(false).initiateScan();
+            Log.d(TAG,scannedResult)
+
         }
 
 ////        val scan = "salesScan"
@@ -58,16 +62,28 @@ class SalesAssociateHomeFragment : Fragment() {
 
             if(result.contents != null){
                 scannedResult = result.contents
-                //binding.bndBarcode = scannedResult
-                Toast.makeText(activity, scannedResult, Toast.LENGTH_LONG).show()
+                binding.txtUPC.text = scannedResult
             } else {
-                Toast.makeText(activity, "Failed", Toast.LENGTH_LONG).show()
-                // binding.bndBarcode = "scan failed"
+                binding.txtUPC.text = "scan failed"
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
     }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        savedInstanceState?.let {
+            scannedResult = it.getString("scannedResult")!!
+            binding.txtUPC.text = scannedResult
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState?.putString("scannedResult", scannedResult)
+        super.onSaveInstanceState(outState)
+    }
+
 
     fun search(){
         findNavController().navigate(R.id.action_salesAssociateHomeFragment_to_seachProductNameFragment)
