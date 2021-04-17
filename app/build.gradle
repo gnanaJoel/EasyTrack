@@ -75,5 +75,4 @@ dependencies {
     implementation 'com.google.zxing:core:3.0.1'
 
 
-
 }

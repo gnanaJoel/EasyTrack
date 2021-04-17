@@ -30,40 +30,51 @@
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="Welcome User100!"
+            android:text="Welcome Sales100!"
             android:textColor="#E61515"
             android:textSize="30dp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnInsertNewProductInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="64dp"
-            android:text="Insert New Product Info"
-            android:textSize="18dp" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btnViewAllProducts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="View All Products"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="64dp"
-            android:textSize="18dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="64dp"
-            android:text="Logout"
-            android:textSize="18dp" />
+                <Button
+                    android:id="@+id/btnInsertNewProductInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="64dp"
+                    android:text="Insert New Product Info"
+                    android:textSize="18dp" />
+
+                <Button
+                    android:id="@+id/btnViewAllProducts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="64dp"
+                    android:text="View All Products"
+                    android:textSize="18dp" />
+
+                <Button
+                    android:id="@+id/btnLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="64dp"
+                    android:text="Logout"
+                    android:textSize="18dp" />
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 </layout>
