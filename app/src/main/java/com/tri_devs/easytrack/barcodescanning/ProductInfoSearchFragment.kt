@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import com.tri_devs.easytrack.R
 
 class ProductInfoSearchFragment : Fragment() {
+    private lateinit var binding: FragmentBattleResultsBinding
+    private lateinit var binding: FragmentProductI
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -15,9 +15,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.tri_devs.easytrack.databinding.FragmentBarcodeScanningBinding
+import com.tri_devs.easytrack.entities.Product
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -228,8 +230,7 @@ class BarcodeScanningFragment : Fragment() {
                     if (document != null) {
                         Log.d(TAG, "DocumentSnapshot data: ${document.data}")
                         if(scan == "salesScan"){
-                            val action = BarcodeScanningFragmentDirections.actionBarcodeScanningFragmentToProductInfoSearchFragment()
-                            findNavController().navigate(action)
+                            getProductInfo(barcode, document)
                         }
                         if (scan == "deptScan"){
                             val input = "scan"
@@ -246,6 +247,30 @@ class BarcodeScanningFragment : Fragment() {
                     Log.d(TAG, "get failed with ", exception)
                 }
         }
+    }
+
+    fun getProductInfo(barcode: String, document : DocumentSnapshot){
+        val productInfo = Product(
+            document.get("name").toString(),
+            document.get("description").toString(),
+            document.get("quantity").toString().toInt(),
+            document.get("upcNumber").toString().toLong(),
+            document.get("retailPrice").toString(),
+            document.get("salesPrice").toString(),
+            document.get("startSalesDate").toString(),
+            document.get("endSalesDate").toString()
+        )
+
+        if(productInfo != null){
+            val action = BarcodeScanningFragmentDirections.goToProductInfoSearch(productInfo)
+            findNavController().navigate(action)
+        }
+        else{
+            Toast.makeText(activity, "UPC number not saved in the db", Toast.LENGTH_SHORT).show()
+        }
+
+
+
     }
 
     override fun onRequestPermissionsResult(

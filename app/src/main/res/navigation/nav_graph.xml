@@ -90,7 +90,7 @@
             android:name="scan"
             app:argType="string" />
         <action
-            android:id="@+id/action_barcodeScanningFragment_to_productInfoSearchFragment"
+            android:id="@+id/goToProductInfoSearch"
             app:destination="@id/productInfoSearchFragment" />
         <action
             android:id="@+id/action_barcodeScanningFragment_to_productInformationDetailsFragment"
@@ -100,7 +100,11 @@
         android:id="@+id/productInfoSearchFragment"
         android:name="com.tri_devs.easytrack.barcodescanning.ProductInfoSearchFragment"
         android:label="fragment_product_info_search"
-        tools:layout="@layout/fragment_product_info_search" />
+        tools:layout="@layout/fragment_product_info_search" >
+        <argument
+            android:name="ProductInfo"
+            app:argType="com.tri_devs.easytrack.entities.Product" />
+    </fragment>
     <fragment
         android:id="@+id/seachProductNameFragment"
         android:name="com.tri_devs.easytrack.barcodescanning.SearchProductNameFragment"
