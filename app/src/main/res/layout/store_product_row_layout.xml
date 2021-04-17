@@ -114,7 +114,16 @@
                 android:layout_marginHorizontal="8dp"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:text="@{bndProduct.salesDateRange}"
+                android:text="@{bndProduct.startSalesDate}"
+                android:textSize="30dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@{bndProduct.endSalesDate}"
                 android:textSize="30dp" />
         </LinearLayout>
 

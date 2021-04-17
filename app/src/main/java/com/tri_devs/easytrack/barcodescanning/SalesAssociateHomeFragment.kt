@@ -16,6 +16,7 @@ import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
 import com.tri_devs.easytrack.R
 import com.tri_devs.easytrack.databinding.FragmentSalesAssociateHomeBinding
+import com.tri_devs.easytrack.entities.Product
 
 
 class SalesAssociateHomeFragment : Fragment() {
@@ -24,6 +25,7 @@ class SalesAssociateHomeFragment : Fragment() {
     val TAG = "SCAN"
     val db = Firebase.firestore
     val productsRef = db.collection("products")
+    lateinit var productInfo: Product
 
 
     override fun onCreateView(
@@ -73,6 +75,16 @@ class SalesAssociateHomeFragment : Fragment() {
                     for (document in documents) {
                         if (document != null) {
                             Log.d(TAG, "${document.id} => ${document.data}")
+                            productInfo = Product(
+                                document.get("name").toString(),
+                                document.get("description").toString(),
+                                document.get("quantity").toString().toInt(),
+                                document.get("upcNumber").toString().toLong(),
+                                document.get("retailPrice").toString(),
+                                document.get("salesPrice").toString(),
+                                document.get("startSalesDate").toString(),
+                                document.get("endSalesDate").toString()
+                            )
 
 
                         } else {
@@ -80,9 +92,24 @@ class SalesAssociateHomeFragment : Fragment() {
                                 .show()
                         }
                     }
+                    if(productInfo != null){
+                        val action = SalesAssociateHomeFragmentDirections.goToProductInfoSearch(productInfo)
+                        findNavController().navigate(action)
+
+                    }
+                    else{
+                        Toast.makeText(activity, "Product doesn't exist", Toast.LENGTH_SHORT)
+                            .show()
+
+                    }
+
+
                 }
                     .addOnFailureListener { exception ->
                         Log.w(TAG, "Error getting documents: ", exception)
+                        Toast.makeText(activity, "Can't connect to the db", Toast.LENGTH_SHORT)
+                            .show()
+
                     }
 
 
