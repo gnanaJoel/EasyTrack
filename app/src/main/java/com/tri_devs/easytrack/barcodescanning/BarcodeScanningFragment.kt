@@ -1,6 +1,7 @@
 package com.tri_devs.easytrack.barcodescanning
 
 import android.Manifest
+import android.content.Context
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
@@ -40,7 +41,7 @@ class BarcodeScanningFragment : Fragment() {
     val db = Firebase.firestore
     val productsRef = db.collection("products")
     val TAG = "BARSCAN"
-    val scan = args.scan
+    private lateinit var scan: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,7 +50,7 @@ class BarcodeScanningFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentBarcodeScanningBinding.inflate(this.layoutInflater, container, false)
 
-
+        scan = args.scan
 
         // Request camera permissions
         if (allPermissionsGranted()) {
@@ -66,8 +67,8 @@ class BarcodeScanningFragment : Fragment() {
         return binding.root
     }
 
+
     companion object {
-        private const val TAG = "CameraXBasic"
         private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
         private const val REQUEST_CODE_PERMISSIONS = 10
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
