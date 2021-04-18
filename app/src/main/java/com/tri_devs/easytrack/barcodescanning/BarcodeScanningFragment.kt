@@ -269,8 +269,6 @@ class BarcodeScanningFragment : Fragment() {
             Toast.makeText(activity, "UPC number not saved in the db", Toast.LENGTH_SHORT).show()
         }
 
-
-
     }
 
     override fun onRequestPermissionsResult(

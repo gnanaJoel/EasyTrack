@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="bndProduct"
+            type="com.tri_devs.easytrack.entities.Product" />
 
     </data>
 
@@ -63,14 +66,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.85"
-                android:text="Price:"
-                android:textSize="18dp" />
+                android:text="Retail Price:"
+                android:textSize="19dp" />
 
             <TextView
+                android:id="@+id/txtRetailPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Price of that product"
+                android:text="@{bndProduct.retailPrice}"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -88,13 +92,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.85"
                 android:text="Sale Price:"
-                android:textSize="18dp" />
+                android:textSize="19dp" />
 
             <TextView
+                android:id="@+id/txtSalePrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Sale Price of that product"
+                android:text="@{bndProduct.salesPrice}"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -112,13 +117,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.85"
                 android:text="Description:"
-                android:textSize="18dp" />
+                android:textSize="19dp" />
 
             <TextView
+                android:id="@+id/txtDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Description of that product"
+                android:text="@{bndProduct.description}"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -139,10 +145,11 @@
                 android:textSize="19dp" />
 
             <TextView
+                android:id="@+id/txtQuantity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Quantity of that product"
+                android:text="@{String.valueOf(bndProduct.quantity)}"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -160,13 +167,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.85"
                 android:text="UPC Number:"
-                android:textSize="18dp" />
+                android:textSize="19dp" />
 
             <TextView
+                android:id="@+id/txtupcNum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="UPC number of that product"
+                android:text="@{String.valueOf(bndProduct.upcNumber)}"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -183,18 +191,45 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.85"
-                android:text="Sales Date:"
-                android:textSize="18dp" />
+                android:text="Start of Sale:"
+                android:textSize="19dp" />
+
+            <TextView
+                android:id="@+id/txtStartSales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{bndProduct.startSalesDate}"
+                android:textSize="16dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1.85"
+                android:text="End of Sale:"
+                android:textSize="19dp" />
+
+            <TextView
+                android:id="@+id/txtEndSales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Sale Duration of Product"
+                android:text="@{bndProduct.endSalesDate}"
                 android:textSize="16dp" />
 
-        </LinearLayout>
 
+        </LinearLayout>
         <Button
             android:id="@+id/btnSearchName"
             android:layout_width="match_parent"
