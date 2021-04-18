@@ -3,14 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="bndProduct"
+            type="com.tri_devs.easytrack.entities.Product" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".barcodegeneration.WarehouseManagerConfirmInsertFragment">
+        tools:context=".barcodegeneration.ConfirmInsertFragment">
 
         <TextView
             android:layout_width="match_parent"
@@ -156,33 +158,5 @@
                 android:textSize="16dp" />
 
         </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="50dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnYes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginHorizontal="10dp"
-                android:text="Yes" />
-
-            <Button
-                android:id="@+id/btnNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginHorizontal="10dp"
-                android:text="No" />
-
-        </LinearLayout>
-
     </LinearLayout>
 </layout>

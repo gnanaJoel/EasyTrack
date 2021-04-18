@@ -29,36 +29,30 @@
             android:id="@+id/action_logout_warehouse"
             app:destination="@id/loginFragment" />
         <action
-            android:id="@+id/action_warehouseManagerHomeFragment_to_warehouseManagerInsertNewProductInfoFragment"
-            app:destination="@id/warehouseManagerInsertNewProductInfoFragment" />
+            android:id="@+id/action_warehouseManagerHomeFragment_to_insertNewProductEntryFragment"
+            app:destination="@id/insertNewProductEntryFragment" />
         <action
             android:id="@+id/action_warehouseManagerHomeFragment_to_storeInventoryActivity"
             app:destination="@id/storeInventoryActivity" />
     </fragment>
     <fragment
-        android:id="@+id/warehouseManagerInsertNewProductInfoFragment"
-        android:name="com.tri_devs.easytrack.barcodegeneration.WarehouseManagerInsertNewProductInfoFragment"
+        android:id="@+id/insertNewProductEntryFragment"
+        android:name="com.tri_devs.easytrack.barcodegeneration.NewProductEntryFragment"
         android:label="fragment_warehouse_manager_insert_new_product_info"
-        tools:layout="@layout/fragment_warehouse_manager_insert_new_product_info" >
+        tools:layout="@layout/fragment_new_product_entry" >
         <action
-            android:id="@+id/action_warehouseManagerInsertNewProductInfoFragment_to_warehouseManagerConfirmInsertFragment"
-            app:destination="@id/warehouseManagerConfirmInsertFragment" />
+            android:id="@+id/action_yes"
+            app:destination="@id/warehouseManagerHomeFragment" />
     </fragment>
     <activity
         android:id="@+id/storeInventoryActivity"
         android:name="com.tri_devs.easytrack.store_inventory.StoreInventoryActivity"
         android:label="StoreInventoryActivity" />
     <fragment
-        android:id="@+id/warehouseManagerConfirmInsertFragment"
-        android:name="com.tri_devs.easytrack.barcodegeneration.WarehouseManagerConfirmInsertFragment"
+        android:id="@+id/confirmInsertFragment"
+        android:name="com.tri_devs.easytrack.barcodegeneration.ConfirmInsertFragment"
         android:label="fragment_warehouse_manager_confirm_insert"
-        tools:layout="@layout/fragment_warehouse_manager_confirm_insert" >
-        <action
-            android:id="@+id/action_no"
-            app:destination="@id/warehouseManagerInsertNewProductInfoFragment" />
-        <action
-            android:id="@+id/action_yes"
-            app:destination="@id/warehouseManagerHomeFragment" />
+        tools:layout="@layout/fragment_confirm_insert" >
     </fragment>
     <fragment
         android:id="@+id/salesAssociateHomeFragment"
