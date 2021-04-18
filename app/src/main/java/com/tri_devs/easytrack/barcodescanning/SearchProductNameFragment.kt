@@ -51,6 +51,8 @@ class SearchProductNameFragment : Fragment() {
             val query = productsRef.whereEqualTo("name", prodName.toString())
             query.get().addOnSuccessListener { documents ->
                 for (document in documents) {
+                    Log.d(TAG, document.toString())
+
                     if (document != null) {
                         Log.d(TAG, "${document.id} => ${document.data}")
                         val productInfo = Product(
@@ -66,21 +68,35 @@ class SearchProductNameFragment : Fragment() {
                         binding.bndProduct = productInfo
 
                     } else {
+                        val productInfo = Product(
+                          "",
+                            "",
+                            0,
+                            0,
+                           "",
+                            "",
+                           "",
+                            ""
+                        )
+                        binding.bndProduct = productInfo
+
                         Toast.makeText(activity, "Invalid Product Name", Toast.LENGTH_SHORT).show()
-                        binding.edtProductName.text.clear()
-                        binding.txtRetailPrice.setText("")
-                        binding.txtSalePrice.setText("")
-                        binding.txtDescription.setText("")
-                        binding.txtQuantity.setText("")
-                        binding.txtupcNum.setText("")
-                        binding.txtStartSales.setText("")
-                        binding.txtEndSales.setText("")
+//                        binding.edtProductName.text.clear()
+//                        binding.txtRetailPrice.setText("")
+//                        binding.txtSalePrice.setText("")
+//                        binding.txtDescription.setText("")
+//                        binding.txtQuantity.setText("")
+//                        binding.txtupcNum.setText("")
+//                        binding.txtStartSales.setText("")
+//                        binding.txtEndSales.setText("")
                         Log.d(TAG, name)
                     }
                 }
             }
                 .addOnFailureListener { exception ->
-                    Log.w(TAG, "Error getting documents: ", exception)
+                    Log.d(TAG, "Error getting documents: ", exception)
+
+
                 }
         }
     }
