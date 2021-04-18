@@ -61,20 +61,7 @@ class SearchProductNameFragment : Fragment() {
                     } else {
                         Toast.makeText(activity, "Invalid Product Name", Toast.LENGTH_SHORT).show()
                         binding.edtProductName.text.clear()
-                        binding.txtRetailPrice.text.equals("")
-                        binding.txtRetailPrice.text.equals("")
-//                        binding.txtSalePrice.text.c
-//                        binding.txtDescription.text.cl
-
-
-//                        binding.txtSalePrice.text.clear()
-//                        binding.txtDescription.text.clear()
-//                        binding.txtQuantity.text.clear()
-//                        binding.txtupcNum.text.clear()
-//                        binding.txtStartSales.text.clear()
-//                        binding.txtEndSales.text.clear()
-
-
+                        binding.txtRetailPrice.text = ""
                     }
                 }
             }
