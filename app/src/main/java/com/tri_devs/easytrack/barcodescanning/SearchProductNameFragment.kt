@@ -38,8 +38,6 @@ class SearchProductNameFragment : Fragment() {
 
         binding.btnSearchName.setOnClickListener {
             searchProductByName()
-
-
         }
 
         return binding.root
