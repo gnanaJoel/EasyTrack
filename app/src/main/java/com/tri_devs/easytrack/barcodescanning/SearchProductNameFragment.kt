@@ -27,6 +27,15 @@ class SearchProductNameFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentSearchProductNameBinding.inflate(this.layoutInflater, container, false)
 
+        binding.txtRetailPrice.setText("")
+        binding.txtSalePrice.setText("")
+        binding.txtDescription.setText("")
+        binding.txtQuantity.setText("")
+        binding.txtupcNum.setText("")
+        binding.txtStartSales.setText("")
+        binding.txtEndSales.setText("")
+
+
         binding.btnSearchName.setOnClickListener {
             searchProductByName()
 
@@ -61,7 +70,14 @@ class SearchProductNameFragment : Fragment() {
                     } else {
                         Toast.makeText(activity, "Invalid Product Name", Toast.LENGTH_SHORT).show()
                         binding.edtProductName.text.clear()
-                        binding.txtRetailPrice.text = ""
+                        binding.txtRetailPrice.setText("")
+                        binding.txtSalePrice.setText("")
+                        binding.txtDescription.setText("")
+                        binding.txtQuantity.setText("")
+                        binding.txtupcNum.setText("")
+                        binding.txtStartSales.setText("")
+                        binding.txtEndSales.setText("")
+                        Log.d(TAG, name)
                     }
                 }
             }
