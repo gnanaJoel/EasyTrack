@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.tri_devs.easytrack.LoginFragment"
-        android:label="fragment_login"
+        android:label="Welcome!"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_warehouseManagerHomeFragment"
@@ -23,47 +23,35 @@
     <fragment
         android:id="@+id/warehouseManagerHomeFragment"
         android:name="com.tri_devs.easytrack.barcodegeneration.WarehouseManagerHomeFragment"
-        android:label="fragment_warehouse_manager_home"
+        android:label="Warehouse Manager Home"
         tools:layout="@layout/fragment_warehouse_manager_home" >
         <action
             android:id="@+id/action_logout_warehouse"
             app:destination="@id/loginFragment" />
         <action
-            android:id="@+id/action_warehouseManagerHomeFragment_to_warehouseManagerInsertNewProductInfoFragment"
-            app:destination="@id/warehouseManagerInsertNewProductInfoFragment" />
+            android:id="@+id/action_warehouseManagerHomeFragment_to_insertNewProductEntryFragment"
+            app:destination="@id/insertNewProductEntryFragment" />
         <action
             android:id="@+id/action_warehouseManagerHomeFragment_to_storeInventoryActivity"
             app:destination="@id/storeInventoryActivity" />
     </fragment>
     <fragment
-        android:id="@+id/warehouseManagerInsertNewProductInfoFragment"
-        android:name="com.tri_devs.easytrack.barcodegeneration.WarehouseManagerInsertNewProductInfoFragment"
-        android:label="fragment_warehouse_manager_insert_new_product_info"
-        tools:layout="@layout/fragment_warehouse_manager_insert_new_product_info" >
-        <action
-            android:id="@+id/action_warehouseManagerInsertNewProductInfoFragment_to_warehouseManagerConfirmInsertFragment"
-            app:destination="@id/warehouseManagerConfirmInsertFragment" />
-    </fragment>
-    <activity
-        android:id="@+id/storeInventoryActivity"
-        android:name="com.tri_devs.easytrack.store_inventory.StoreInventoryActivity"
-        android:label="StoreInventoryActivity" />
-    <fragment
-        android:id="@+id/warehouseManagerConfirmInsertFragment"
-        android:name="com.tri_devs.easytrack.barcodegeneration.WarehouseManagerConfirmInsertFragment"
-        android:label="fragment_warehouse_manager_confirm_insert"
-        tools:layout="@layout/fragment_warehouse_manager_confirm_insert" >
-        <action
-            android:id="@+id/action_no"
-            app:destination="@id/warehouseManagerInsertNewProductInfoFragment" />
+        android:id="@+id/insertNewProductEntryFragment"
+        android:name="com.tri_devs.easytrack.barcodegeneration.NewProductEntryFragment"
+        android:label="New Product Entry"
+        tools:layout="@layout/fragment_new_product_entry" >
         <action
             android:id="@+id/action_yes"
             app:destination="@id/warehouseManagerHomeFragment" />
     </fragment>
+    <activity
+        android:id="@+id/storeInventoryActivity"
+        android:name="com.tri_devs.easytrack.store_inventory.StoreInventoryActivity"
+        android:label="Store Inventory" />
     <fragment
         android:id="@+id/salesAssociateHomeFragment"
         android:name="com.tri_devs.easytrack.barcodescanning.SalesAssociateHomeFragment"
-        android:label="fragment_sales_associate_home"
+        android:label="Sales Associate home"
         tools:layout="@layout/fragment_sales_associate_home" >
         <action
             android:id="@+id/action_logout_sales"
@@ -84,7 +72,7 @@
     <fragment
         android:id="@+id/barcodeScanningFragment"
         android:name="com.tri_devs.easytrack.barcodescanning.BarcodeScanningFragment"
-        android:label="fragment_barcode_scanning"
+        android:label="Product Barcode Scanner"
         tools:layout="@layout/fragment_barcode_scanning" >
         <argument
             android:name="scan"
@@ -99,7 +87,7 @@
     <fragment
         android:id="@+id/productInfoSearchFragment"
         android:name="com.tri_devs.easytrack.barcodescanning.ProductInfoSearchFragment"
-        android:label="fragment_product_info_search"
+        android:label="Product Information Scan Results"
         tools:layout="@layout/fragment_product_info_search" >
         <argument
             android:name="ProductInfo"
@@ -108,12 +96,12 @@
     <fragment
         android:id="@+id/seachProductNameFragment"
         android:name="com.tri_devs.easytrack.barcodescanning.SearchProductNameFragment"
-        android:label="fragment_seach_product_name"
+        android:label="Product Information Search Results"
         tools:layout="@layout/fragment_search_product_name" />
     <fragment
         android:id="@+id/departmentManagerHomeFragment"
         android:name="com.tri_devs.easytrack.productInfoUpdate.DepartmentManagerHomeFragment"
-        android:label="fragment_department_manager_home"
+        android:label="Department Manager Home"
         tools:layout="@layout/fragment_department_manager_home" >
         <action
             android:id="@+id/action_logout_department"
@@ -131,7 +119,7 @@
     <fragment
         android:id="@+id/productInformationDetailsFragment"
         android:name="com.tri_devs.easytrack.productInfoUpdate.ProductInformationDetailsFragment"
-        android:label="fragment_product_information_details"
+        android:label="Product Information Details"
         tools:layout="@layout/fragment_product_information_details" >
         <argument
             android:name="input"

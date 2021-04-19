@@ -30,7 +30,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:layout_marginTop="8dp"
@@ -58,7 +58,7 @@
                 android:textSize="30dp" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:layout_marginTop="8dp"
@@ -81,13 +81,19 @@
                 android:layout_marginTop="8dp"
                 android:text="@{bndProduct.description}"
                 android:textSize="30dp" />
-
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
-                android:text="@{String.valueOf(bndProduct.quantity)}"
+                android:text="@{@string/item_units(bndProduct.quantity)}"
                 android:textSize="30dp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -97,10 +103,10 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="8dp"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginHorizontal="8dp"
@@ -108,24 +114,21 @@
                 android:text="Sales Date: "
                 android:textSize="30dp" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="8dp"
                 android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="@{bndProduct.startSalesDate}"
-                android:textSize="30dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="@{bndProduct.endSalesDate}"
-                android:textSize="30dp" />
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@{@string/sales_date_range(bndProduct.startSalesDate, bndProduct.endSalesDate)}"
+                    android:textSize="30dp"/>
+            </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
 </layout>
