@@ -53,7 +53,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:inputType="text"
-                        android:text="@string/lego_star_wars"
                         android:textSize="20sp" />
 
                 </LinearLayout>
@@ -77,7 +76,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:hint="@string/_89_99"
                         android:inputType="numberDecimal"
                         android:textSize="20sp" />
 
@@ -102,7 +100,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:hint="@string/_79_99"
                         android:inputType="numberDecimal"
                         android:textColor="#E11313"
                         android:textSize="20sp" />
@@ -128,7 +125,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:hint="@string/star_wars_lego_set"
                         android:textSize="20sp" />
 
                 </LinearLayout>
@@ -152,7 +148,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:hint="@string/_15"
                         android:inputType="number"
                         android:textSize="20sp" />
 
@@ -177,7 +172,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:text="@string/_912505325260"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
 
@@ -202,7 +196,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:hint="@string/_26_12_21"
                         android:inputType="date"
                         android:textSize="15sp" />
 
@@ -218,7 +211,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
-                        android:hint="@string/_31_12_21"
                         android:inputType="date"
                         android:textSize="15sp" />
 
