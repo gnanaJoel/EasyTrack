@@ -34,4 +34,5 @@ class ProductInfoSearchFragment : Fragment() {
         return binding.root
     }
 
+
 }

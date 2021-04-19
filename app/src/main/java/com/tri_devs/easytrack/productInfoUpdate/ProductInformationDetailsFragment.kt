@@ -86,6 +86,13 @@ class ProductInformationDetailsFragment : Fragment() {
 
     private fun searchProductByName() {
         val prodName = binding.etProductName.text
+        binding.etPrice.setText("")
+        binding.etSalesPrice.setText("")
+        binding.etDescription.setText("")
+        binding.etQuantity.setText("")
+        binding.tvUPC.text = ""
+        binding.etBeginSalesDate.setText("")
+        binding.etEndSalesDate.setText("")
         if (prodName.toString().isBlank()){
             Toast.makeText(activity, "Please enter a product name", Toast.LENGTH_SHORT).show()
         }
