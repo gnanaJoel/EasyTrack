@@ -58,13 +58,7 @@ class NewProductEntryFragment : Fragment() {
     fun submitProductInfo(){
         productEntryDialogBinding = DataBindingUtil.inflate(LayoutInflater.from(this.context), R.layout.custom_product_entry_dialog, null,false)
 
-        val product = Product(name = productEntryBinding.edtName.text.toString(), description = productEntryBinding.edtDescription.text.toString(), quantity = productEntryBinding.edtQuantity.text.toString().toInt(), retailPrice = productEntryBinding.edtRetailPrice.text.toString())
-
-        product.upcNumber = 885909950805
-
-        displayBitmap(product.upcNumber.toString())
-        productEntryDialogBinding.bndProduct = product
-
+        generateBarcode()
 
         val dialog = AlertDialog.Builder(this.context).setView(productEntryDialogBinding.root).setCancelable(false).setPositiveButton("Yes") { dialog, _ ->
             val productEntry = hashMapOf(
@@ -91,6 +85,16 @@ class NewProductEntryFragment : Fragment() {
         }.setNegativeButton("No"){ dialog, _ ->
             dialog.dismiss()
         }.show()
+    }
+
+
+    fun generateBarcode(){
+
+        val product = Product(name = productEntryBinding.edtName.text.toString(), description = productEntryBinding.edtDescription.text.toString(), quantity = productEntryBinding.edtQuantity.text.toString().toInt(), retailPrice = productEntryBinding.edtRetailPrice.text.toString())
+
+        product.upcNumber = 885909950805
+        displayBitmap(product.upcNumber.toString())
+        productEntryDialogBinding.bndProduct = product
     }
 
     private fun createBarcodeBitmap(

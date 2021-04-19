@@ -21,10 +21,10 @@ class WarehouseManagerHomeFragment : Fragment() {
         binding = FragmentWarehouseManagerHomeBinding.inflate(this.layoutInflater, container, false)
 
         binding.btnInsertNewProductInfo.setOnClickListener {
-            findNavController().navigate(R.id.action_warehouseManagerHomeFragment_to_insertNewProductEntryFragment)
+            insertNewProduct()
         }
         binding.btnViewAllProducts.setOnClickListener {
-            findNavController().navigate(R.id.action_warehouseManagerHomeFragment_to_storeInventoryActivity)
+            retrieveAllProducts()
         }
 
         binding.btnLogout.setOnClickListener {
@@ -32,5 +32,13 @@ class WarehouseManagerHomeFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    fun insertNewProduct(){
+        findNavController().navigate(R.id.action_warehouseManagerHomeFragment_to_insertNewProductEntryFragment)
+    }
+
+    fun retrieveAllProducts(){
+        findNavController().navigate(R.id.action_warehouseManagerHomeFragment_to_storeInventoryActivity)
     }
 }
