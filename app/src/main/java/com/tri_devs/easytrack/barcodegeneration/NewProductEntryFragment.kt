@@ -55,7 +55,7 @@ class NewProductEntryFragment : Fragment() {
 
 
 
-    fun submitProductInfo(){
+    private fun submitProductInfo(){
         productEntryDialogBinding = DataBindingUtil.inflate(LayoutInflater.from(this.context), R.layout.custom_product_entry_dialog, null,false)
 
         generateBarcode()
@@ -88,7 +88,7 @@ class NewProductEntryFragment : Fragment() {
     }
 
 
-    fun generateBarcode(){
+    private fun generateBarcode(){
 
         val product = Product(name = productEntryBinding.edtName.text.toString(), description = productEntryBinding.edtDescription.text.toString(), quantity = productEntryBinding.edtQuantity.text.toString().toInt(), retailPrice = productEntryBinding.edtRetailPrice.text.toString())
 

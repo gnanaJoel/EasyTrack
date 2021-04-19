@@ -34,11 +34,11 @@ class WarehouseManagerHomeFragment : Fragment() {
         return binding.root
     }
 
-    fun insertNewProduct(){
+    private fun insertNewProduct(){
         findNavController().navigate(R.id.action_warehouseManagerHomeFragment_to_insertNewProductEntryFragment)
     }
 
-    fun retrieveAllProducts(){
+    private fun retrieveAllProducts(){
         findNavController().navigate(R.id.action_warehouseManagerHomeFragment_to_storeInventoryActivity)
     }
 }
