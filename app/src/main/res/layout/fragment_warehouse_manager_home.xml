@@ -33,7 +33,7 @@
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="64dp"
             android:text="Insert New Product"
-            android:textSize="18dp" />
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/btnViewAllProducts"
@@ -43,7 +43,7 @@
             android:text="View All Products"
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="64dp"
-            android:textSize="18dp" />
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/btnLogout"
@@ -53,7 +53,7 @@
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="64dp"
             android:text="Logout"
-            android:textSize="18dp" />
+            android:textSize="20dp" />
 
     </LinearLayout>
 </layout>

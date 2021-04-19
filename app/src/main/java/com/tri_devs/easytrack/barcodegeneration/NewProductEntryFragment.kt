@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
@@ -34,7 +35,18 @@ class NewProductEntryFragment : Fragment() {
         //Inflate the layout for this fragment
         productEntryBinding = FragmentNewProductEntryBinding.inflate(this.layoutInflater, container, false)
 
-        productEntryBinding.btnSubmit.setOnClickListener { submitProductInfo() }
+        productEntryBinding.btnSubmit.setOnClickListener {
+            if (productEntryBinding.edtName.text.toString().isBlank() ||
+                productEntryBinding.edtDescription.text.toString().isBlank() ||
+                productEntryBinding.edtRetailPrice.text.toString().isBlank() ||
+                productEntryBinding.edtQuantity.text.toString().isBlank()
+            ) {
+                Toast.makeText(activity, "1 or more required fields are blank", Toast.LENGTH_SHORT)
+                    .show()
+            } else {
+                submitProductInfo()
+            }
+        }
 
         return productEntryBinding.root
     }
@@ -72,11 +84,13 @@ class NewProductEntryFragment : Fragment() {
                 .addOnSuccessListener { Log.d(TAG, "Product Entry successfully written to FireStore DB!") }
                 .addOnFailureListener { Log.d(TAG, "Error on writing Product Entry to FireStore DB") }
 
+            Toast.makeText(activity, "Product successfully to Store Inventory!", Toast.LENGTH_SHORT).show()
+
             findNavController().navigate(R.id.action_yes)
 
         }.setNegativeButton("No"){ dialog, _ ->
             dialog.dismiss()
-        }.create().show()
+        }.show()
     }
 
     private fun createBarcodeBitmap(

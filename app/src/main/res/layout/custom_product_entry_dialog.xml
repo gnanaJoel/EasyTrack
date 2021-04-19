@@ -17,7 +17,7 @@
             android:layout_marginHorizontal="8dp"
             android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="Are you sure you want to insert this product?"
+            android:text="Are You Sure You Want to Add This Product?"
             android:textColor="#E61515"
             android:textSize="30dp"
             android:textStyle="bold" />
@@ -65,14 +65,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1.85"
-                        android:text="Retail Price:"
+                        android:text="Description:"
                         android:textSize="19dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@{bndProduct.retailPrice}"
+                        android:text="@{bndProduct.description}"
                         android:textSize="16dp" />
 
                 </LinearLayout>
@@ -89,14 +89,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1.85"
-                        android:text="Description:"
+                        android:text="Retail Price:"
                         android:textSize="19dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@{bndProduct.description}"
+                        android:text="@{bndProduct.retailPrice}"
                         android:textSize="16dp" />
 
                 </LinearLayout>
